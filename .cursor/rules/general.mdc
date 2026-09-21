@@ -1,0 +1,27 @@
+---
+description: Core project rules. Always applies.
+alwaysApply: true
+---
+
+# SafetyLens — core rules
+
+Read `docs/PRD.md`, `docs/ARCHITECTURE.md` and `docs/RULES.md` before changing anything.
+Check `docs/DECISIONS.md` — do not reverse a recorded decision without a new ADR.
+Check `docs/MEMORY.md` for current state and known issues.
+
+## Non-negotiable
+
+1. **Never generate, paraphrase or summarise regulation text.** It enters only through
+   `src/regulations.py`, verbatim from eCFR. If the source is unreachable, raise.
+2. **Never remove or weaken abstention to make output look better.**
+3. **Always report a baseline beside every metric.**
+4. **All tunables live in `config.py`.** A hard-coded number elsewhere is a bug.
+5. **Never claim something is built when it is specified.** See `docs/agent_logic.md`.
+
+## Working style
+
+- Implement by task ID from `TASKS.md`, never by loose description.
+- Do not modify files unrelated to the current task.
+- Do not add a dependency without justification.
+- Do not mark a task complete without running it.
+- When uncertain, ask. Do not guess and proceed.

@@ -1,0 +1,700 @@
+[
+ {
+  "id": "E001",
+  "narrative": "An employee was removing chains from plywood formwork. The formwork was hit by another piece of wood, and the wooden formwork struck the employee on their lower back, resulting in a back contusion.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck by object or equipment, unspecified",
+  "verdict": "section",
+  "primary": "1910.176",
+  "acceptable": [
+   "1910.28"
+  ],
+  "reasoning": "Struck by material being moved by hand; the failure is materials handling, not a machine.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E002",
+  "narrative": "On June 15, 2017, at approximately 12:00 p.m., a temporary employee suffered a partial left index fingertip amputation while clearing a jammed part on the cutter section of an extrusion line.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery during maintenance, cleaning ",
+  "verdict": "section",
+  "primary": "1910.147",
+  "acceptable": [
+   "1910.212"
+  ],
+  "reasoning": "Clearing a jam on a running extrusion line - energy control during servicing is the failure.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E003",
+  "narrative": "An employee was using a hydraulic press to cut bearing parts and crushed two fingers.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery during regular operation",
+  "verdict": "section",
+  "primary": "1910.212",
+  "acceptable": [
+   "1910.217"
+  ],
+  "reasoning": "HYDRAULIC press: 1910.217(a)(5) excludes hydraulic presses, so the general machine-guarding duty governs.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E004",
+  "narrative": "An employee was pushing a rack along an elevated rail. The rack fell and struck the employee's foot, possibly breaking it.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck by falling object or equipment, unspecified",
+  "verdict": "section",
+  "primary": "1910.176",
+  "acceptable": [
+   "1910.136"
+  ],
+  "reasoning": "Load fell during manual movement along a rail; materials handling.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E005",
+  "narrative": "Employees were moving containers on tugs. An employee was connecting one dolly to another when the tongue of the dolly fell, resulting in an amputation of the employee's right ring fingertip.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Compressed or pinched by shifting objects or equipment",
+  "verdict": "section",
+  "primary": "1910.176",
+  "acceptable": [],
+  "reasoning": "Caught between dolly components during manual coupling; materials handling.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E006",
+  "narrative": "An employee was manning the hose on a pump truck. The employee's right leg and shoulder were fractured when the ridge of the pump truck tipped over onto the employee.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck by swinging part of powered vehicle",
+  "verdict": "uncertain",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "A 'pump truck' tipping is not clearly within 1910.178 and 1910 has no general mobile-equipment section.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E007",
+  "narrative": "An employee was hydroblasting a vertical line when the hose came out and the pressurized water blast lacerated the employee's right wrist and forearm.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck by discharged object or substance",
+  "verdict": "section",
+  "primary": "1910.132",
+  "acceptable": [
+   "1910.242"
+  ],
+  "reasoning": "High-pressure hydroblasting has no dedicated 1910 section; the duty is PPE hazard assessment.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E008",
+  "narrative": "On September 21, 2017, an employee was readying gates for installation. While manually moving the slide, the employee's finger was caught in a gear, pinching and removing the skin on the fingertip.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Compressed or pinched by shifting objects or equipment",
+  "verdict": "section",
+  "primary": "1910.212",
+  "acceptable": [
+   "1910.219"
+  ],
+  "reasoning": "Finger into an unguarded gear on a manually driven slide - general machine guarding.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E009",
+  "narrative": "An employee was guiding the first joint of casing into a conductor in a cellar area. A centralizer (secured around a pipe) was pushed through the rotary table. The centralizer slid down the pipe and caught the employee's left ring finger against the collar on the casing. The employee's left ring fingertip was amputated.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck by object falling from vehicle or machinery-other than vehicle part",
+  "verdict": "section",
+  "primary": "1910.176",
+  "acceptable": [],
+  "reasoning": "Caught between pipe and collar during casing handling; materials handling.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E010",
+  "narrative": "An employee was organizing the stock room and bumped his elbow on a stack of wooden pallets. The elbow later became infected and the employee was hospitalized.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck against stationary object or equipment, n.e.c.",
+  "verdict": "section",
+  "primary": "1910.176",
+  "acceptable": [
+   "1910.22"
+  ],
+  "reasoning": "Struck against improperly stacked pallets - storage of materials.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E011",
+  "narrative": "On February 4, 2020, an employee was bent over to re-stock a lower bin/shelf when he stood up and struck his head/face on a plastic shelving bin. He suffered a subdural hematoma and acute subdural bleed over a chronic bleed in the frontal lobe of the brain, requiring hospitalization and surgery.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck against stationary object or equipment while rising",
+  "verdict": "uncertain",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Standing up into a shelving bin is not addressed by any substantive 1910 section.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E012",
+  "narrative": "An employee was clearing a jam in the palletizer machine and cut a finger when it was caught in a gear.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery during maintenance, cleaning ",
+  "verdict": "section",
+  "primary": "1910.147",
+  "acceptable": [
+   "1910.212"
+  ],
+  "reasoning": "Clearing a jam on a running palletizer - energy control during servicing.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E013",
+  "narrative": "An employee was repositioning a pallet that was misaligned on a batch-off pallet magazine. When he raised the pallet, his left thumb tip was caught and crushed between the pallet and pallet magazine frame, removing flesh and the nail.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in or compressed by equipment or objects, unspecified",
+  "verdict": "section",
+  "primary": "1910.212",
+  "acceptable": [
+   "1910.147"
+  ],
+  "reasoning": "Thumb crushed between pallet and machine frame during normal repositioning.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E014",
+  "narrative": "An employee was cleaning a transfer belt when his hand got caught between the belt and the drive roller. He was hospitalized with severe injuries to the second, third, and fourth digits on his right hand.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery during maintenance, cleaning ",
+  "verdict": "section",
+  "primary": "1910.147",
+  "acceptable": [
+   "1910.219"
+  ],
+  "reasoning": "Cleaning a live transfer belt; hand drawn into the drive nip.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E015",
+  "narrative": "An employee was inspecting the parking lot conditions and internal roadways of the facility when he stepped on ice and fell, breaking the right side of his hip.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall on same level due to slipping ",
+  "verdict": "section",
+  "primary": "1910.22",
+  "acceptable": [],
+  "reasoning": "Slip on ice on a walking-working surface the employer controls.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E016",
+  "narrative": "Employees were cleaning up the area around an 8-foot retaining wall. An employee was at the top of the wall, receiving trash as it was handed up from below. The employee fell while reaching over the edge, landed on the ground, and suffered a slipped disk.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level 6 to 10 feet",
+  "verdict": "section",
+  "primary": "1910.28",
+  "acceptable": [
+   "1910.29"
+  ],
+  "reasoning": "Fall from an 8-foot retaining wall edge - unprotected side above the 4-foot trigger.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E017",
+  "narrative": "At or about 1:40 p.m., on July 6, 2015, an employee received serious back and spinal injuries as a result of a fall from a swing set. The employee was hospitalized and had to undergo spinal surgery.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level, unspecified",
+  "verdict": "uncertain",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "A swing set is not a walking-working surface; no section clearly governs.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E018",
+  "narrative": "An employee stepped off a forklift onto a 4x4 wood block used for spacing trusses, which rolled his ankle and cracked the base of the tibia on his right foot. He was hospitalized for surgery.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level less than 6 feet",
+  "verdict": "section",
+  "primary": "1910.22",
+  "acceptable": [
+   "1910.178"
+  ],
+  "reasoning": "Stepped onto an obstruction left on the floor; housekeeping of the walking surface.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E019",
+  "narrative": "An employee was walking on a shanking conveyor when he slipped while stepping over a piece of conduit. His hand went into a chain and sprocket on the roller conveyor, resulting in an amputation to his right ring fingertip. The chain and sprocket were unguarded at the time of the incident.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall onto or against object on same level, n.e.c.",
+  "verdict": "section",
+  "primary": "1910.219",
+  "acceptable": [
+   "1910.212",
+   "1910.22"
+  ],
+  "reasoning": "Hand into an UNGUARDED chain and sprocket - the narrative states the guard was missing.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E020",
+  "narrative": "An employee was tearing off the existing roof on a residential structure when he fell approximately 8 feet to the ground below, fracturing his pelvis and collarbone. He was hospitalized and had surgery.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level 6 to 10 feet",
+  "verdict": "out_of_scope",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Residential roof tear-off is construction; governed by Part 1926, which is not cached.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E021",
+  "narrative": "An employee was working in a picking room when they fell on a buildup of ice, resulting in a leg fracture.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall on same level due to slipping ",
+  "verdict": "section",
+  "primary": "1910.22",
+  "acceptable": [],
+  "reasoning": "Fall on an ice buildup inside the workplace - walking-working surface condition.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E022",
+  "narrative": "An employee was getting a drink at a customer's deli when she fell through an open hatch in the floor and fractured her femur.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall through surface or existing opening, unspecified",
+  "verdict": "section",
+  "primary": "1910.28",
+  "acceptable": [
+   "1910.29"
+  ],
+  "reasoning": "Fall through an unprotected floor hole.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E023",
+  "narrative": "An employee was moving rockers on the sales floor when her foot became stuck underneath a rocker, causing her to fall to the ground and fracture her hip. She required surgery.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall on same level due to tripping over an object ",
+  "verdict": "section",
+  "primary": "1910.22",
+  "acceptable": [],
+  "reasoning": "Trip on merchandise obstructing the walking surface.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E024",
+  "narrative": "An employee engaged in tree cutting and trimming with a chainsaw fell approximately 30 feet to the ground below when his support rope was cut. He fractured his pelvis.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level 26 to 30 feet",
+  "verdict": "uncertain",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Arboriculture: 1910.266 covers logging and excludes tree care; 1910.28 does not reach a climbed tree.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E025",
+  "narrative": "An employee was in an aisle way and was struck by a powered industrial truck resulting in a right forearm injury and pinky finger amputation requiring hospitalization.",
+  "true_group": "Transportation incidents",
+  "true_event": "Pedestrian struck by vehicle in nonroadway area, unspecified",
+  "verdict": "section",
+  "primary": "1910.178",
+  "acceptable": [],
+  "reasoning": "Pedestrian struck by a powered industrial truck in an aisle.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E026",
+  "narrative": "A flagger was trying to instruct a passenger vehicle to stop when the vehicle's side mirror struck her. She fell to the ground and the truck ran her over, breaking her leg and hip. She was hospitalized.",
+  "true_group": "Transportation incidents",
+  "true_event": "Pedestrian struck by forward-moving vehicle in work zone ",
+  "verdict": "out_of_scope",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Flagger in a highway work zone - construction, Part 1926.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E027",
+  "narrative": "An employee was training on a lift when they struck a guardrail, resulting in a leg laceration.",
+  "true_group": "Transportation incidents",
+  "true_event": "Nonroadway collision with object other than vehicle, unspecified",
+  "verdict": "section",
+  "primary": "1910.178",
+  "acceptable": [
+   "1910.67"
+  ],
+  "reasoning": "Operator training on a powered truck; struck a fixed guardrail.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E028",
+  "narrative": "A forklift driver and a truck driver were loading a freight box onto a truck. While headed to the truck, the truck driver was struck on the left ankle by the forklift's forks. The truck driver was hospitalized, requiring surgery.",
+  "true_group": "Transportation incidents",
+  "true_event": "Pedestrian struck by vehicle in nonroadway area, unspecified",
+  "verdict": "section",
+  "primary": "1910.178",
+  "acceptable": [],
+  "reasoning": "Pedestrian struck by forklift forks during loading.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E029",
+  "narrative": "An employee was operating a stand-up forklift in a freezer area. The forklift struck a rack and ejected the employee, who suffered a broken left arm.",
+  "true_group": "Transportation incidents",
+  "true_event": "Nonroadway collision with object other than vehicle, n.e.c.",
+  "verdict": "section",
+  "primary": "1910.178",
+  "acceptable": [],
+  "reasoning": "Stand-up forklift struck a rack and ejected the operator.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E030",
+  "narrative": "An employee was operating a stand-up powered industrial truck and struck a support column. The employee suffered crushing injuries to their left foot and leg.",
+  "true_group": "Transportation incidents",
+  "true_event": "Nonroadway collision with object other than vehicle, unspecified",
+  "verdict": "section",
+  "primary": "1910.178",
+  "acceptable": [],
+  "reasoning": "Powered industrial truck struck a support column.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E031",
+  "narrative": "An employee was testing a just-installed electrical switchgear. While the employee was testing a fuse, an electrical arc burned the employee's right arm and forearm.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Direct exposure to electricity, unspecified",
+  "verdict": "section",
+  "primary": "1910.333",
+  "acceptable": [
+   "1910.335",
+   "1910.269"
+  ],
+  "reasoning": "Arc flash while testing energised switchgear - work practices on live parts.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E032",
+  "narrative": "An employee was adjusting a machine. A glob of hot glass hit the employee's glove, and the employee's other gloved hand then entered the machine. The employee suffered burns to both hands and was hospitalized.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Contact with hot objects or substances",
+  "verdict": "section",
+  "primary": "1910.212",
+  "acceptable": [
+   "1910.138"
+  ],
+  "reasoning": "Hand entered an operating machine; guarding is the controlling duty, PPE secondary.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E033",
+  "narrative": "On June 22, 2016, an employee had been performing maintenance on service equipment when he was found not fully responsive and slightly incoherent in his truck. He was hospitalized with heat exhaustion.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Exposure to environmental heat",
+  "verdict": "none_exists",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Environmental heat - no federal standard; General Duty Clause (ADR-011).",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E034",
+  "narrative": "An employee was removing a sock from the inline filter at the filler after a hot water wash. When he removed the clamp, hot water sprayed onto his right side in areas from his neck down to his legs and onto his back. He suffered second-degree burns.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Contact with hot objects or substances",
+  "verdict": "section",
+  "primary": "1910.147",
+  "acceptable": [
+   "1910.132"
+  ],
+  "reasoning": "Clamp removed from a pressurised line during servicing - release of stored energy.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E035",
+  "narrative": "An employee was working and was exposed to exhaust from a cooking unit that had a malfunctioning ventilation system. He suffered respiratory irritation and was hospitalized.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Inhalation of harmful substance-single episode",
+  "verdict": "section",
+  "primary": "1910.94",
+  "acceptable": [
+   "1910.1000"
+  ],
+  "reasoning": "Exposure to cooking exhaust through a failed ventilation system.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E036",
+  "narrative": "An employee was changing gaskets on a valve that contained condensate. When the employee opened the pipe/valve, he was sprayed with hot water and sustained first and second degree burns to the back and legs.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Contact with hot objects or substances",
+  "verdict": "section",
+  "primary": "1910.147",
+  "acceptable": [
+   "1910.132"
+  ],
+  "reasoning": "Valve opened during gasket replacement while condensate pressure remained - stored energy.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E037",
+  "narrative": "An employee was placing traffic cones at a construction site and was stung by an insect. The employee suffered an allergic reaction.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Bites and stings, unspecified",
+  "verdict": "none_exists",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Insect sting; no 1910 section addresses it.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E038",
+  "narrative": "Two employees were working and got into an altercation. One employee struck the other with a 2x4 causing head and back injuries.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Hitting, kicking, beating, shoving",
+  "verdict": "none_exists",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Assault between employees - no workplace violence standard (ADR-011).",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E039",
+  "narrative": "An employee was assaulted at a rest area along I-95 South by another driver resulting in a broken ankle.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Hitting, kicking, beating, shoving",
+  "verdict": "none_exists",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Assault by a third party at a rest area - no workplace violence standard.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E040",
+  "narrative": "An employee was unloading cattle. While in the pen, a steer came from behind and knocked him over. The steer then stepped on the employee and kicked the employee in the head. The employee was hospitalized for broken ribs and a bruised forehead.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Trampled by or stepped on by animal",
+  "verdict": "none_exists",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Trampled by livestock; no 1910 section, and agriculture sits in Part 1928.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E041",
+  "narrative": "An employee was shot in the right leg by a gun that went off as she reached back to grab it.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Self-inflicted shooting-unintentional",
+  "verdict": "none_exists",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Unintentional discharge of a firearm; no 1910 section addresses firearms.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E042",
+  "narrative": "An employee was running a test procedure on an explosive device when it detonated, sending shrapnel into the employee's right hand and arm.",
+  "true_group": "Fires and explosions",
+  "true_event": "Explosion, n.e.c.",
+  "verdict": "section",
+  "primary": "1910.109",
+  "acceptable": [
+   "1910.132"
+  ],
+  "reasoning": "Detonation while testing an explosive device.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E043",
+  "narrative": "An employee was using a plasma cutter to cut parts on a line's cutoff. Sparks from the cutter came into contact with a flammable liquid that was used to mark parts, and the employee suffered burns to the face, neck, chest, and arms in the resulting fire. He also suffered a head laceration.",
+  "true_group": "Fires and explosions",
+  "true_event": "Ignition of vapors, gases, or liquids",
+  "verdict": "section",
+  "primary": "1910.252",
+  "acceptable": [
+   "1910.106"
+  ],
+  "reasoning": "Cutting sparks ignited a flammable liquid - fire prevention during hot work.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E044",
+  "narrative": "An employee was on top of a tank when it exploded. He was thrown from the tank and required hospitalization for multiple fractures.",
+  "true_group": "Fires and explosions",
+  "true_event": "Explosion of pressure vessel, piping, or tire",
+  "verdict": "uncertain",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "The narrative does not say what the tank contained or held, so the governing section is unclear.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E045",
+  "narrative": "A propane smoker exploded while an employee was trying to light it. The employee suffered injuries to the right forearm, right hand, and right side of the face. The employee was hospitalized.",
+  "true_group": "Fires and explosions",
+  "true_event": "Explosion, n.e.c.",
+  "verdict": "section",
+  "primary": "1910.110",
+  "acceptable": [],
+  "reasoning": "Propane appliance exploded on ignition - LPG storage and handling.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E046",
+  "narrative": "Two employees were using gasoline and bar oil to ignite a brush pile when a flash fire occurred. An employee sustained burns to their face, arms, and hands.",
+  "true_group": "Fires and explosions",
+  "true_event": "Ignition of vapors, gases, or liquids",
+  "verdict": "section",
+  "primary": "1910.106",
+  "acceptable": [
+   "1910.132"
+  ],
+  "reasoning": "Gasoline used as an accelerant produced a flash fire - flammable liquids.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E047",
+  "narrative": "On January 25, 2016, at approximately 12:00 p.m., an employee was performing physical training when he became lightheaded and dizzy. He was hospitalized.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Other exertions or bodily reactions, unspecified",
+  "verdict": "none_exists",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Bodily reaction during physical training; no ergonomics standard exists.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E048",
+  "narrative": "An employee was working on a wildlife habitat improvement project. While lifting a rock, he twisted and injured his back, requiring hospitalization.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Overexertion in lifting-single episode",
+  "verdict": "none_exists",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Overexertion lifting - the 2000 ergonomics rule was rescinded in 2001 and none replaced it.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E049",
+  "narrative": "An employee was attempting to lift a 5-gallon bucket of paint and sustained a partially collapsed lung. Dried paint had caused the bucket to be stuck to the floor.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Overexertion in lifting-single episode",
+  "verdict": "none_exists",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Overexertion lifting a stuck container - no ergonomics standard.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ },
+ {
+  "id": "E050",
+  "narrative": "On September 23, 2022, an employee was lifting a 6-inch steel pipe when he suffered a herniated disk, and a fracture.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Overexertion in lifting-single episode",
+  "verdict": "none_exists",
+  "primary": null,
+  "acceptable": [],
+  "reasoning": "Overexertion lifting steel pipe - no ergonomics standard.",
+  "labeller": "claude-opus-5",
+  "labelled_at": "2026-09-20",
+  "guide_version": "1.0"
+ }
+]

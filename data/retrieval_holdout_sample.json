@@ -1,0 +1,302 @@
+[
+ {
+  "id": "H001",
+  "narrative": "On December 19, 2019, an employee was conducting maintenance on a forming machine. He was checking the machine's ventilation system when the mold came down on his right thumb, causing an amputation without bone loss.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in or compressed by equipment or objects, unspecified"
+ },
+ {
+  "id": "H002",
+  "narrative": "An employee attempted to cut a hole in a rubber mudflap with a pocket knife. The pocket knife closed and cut the tip of the employee's left index finger.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Injured by slipping or swinging object held by injured worker"
+ },
+ {
+  "id": "H003",
+  "narrative": "An employee was performing repairs on a shredder machine when a shaft fell and caught his left index and middle fingers, causing broken fingers and tendon injuries.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck by object falling from vehicle or machinery-other than vehicle part"
+ },
+ {
+  "id": "H004",
+  "narrative": "A dunnage board for setting concrete moved, and an employee's left hand was caught between the board and a concrete panel. The employee's middle and ring fingertips were amputated.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Compressed or pinched by shifting objects or equipment"
+ },
+ {
+  "id": "H005",
+  "narrative": "On August 13, 2020, an employee was demonstrating an issue involving a loose chain on the socket of the label machine. The chain grabbed the employee's right gloved hand and pulled it into the socket resulting in a finger amputation.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery, n.e.c."
+ },
+ {
+  "id": "H006",
+  "narrative": "An employee had just placed wood cribbing on the ground in front of a forklift's forks and was trying to work a 5,000-pound cylinder off the forks and onto the cribbing. The cylinder rolled off the forks and caught the cuff on his glove. He was pulled down and pinned between the cylinder and the ground, suffering a dislocated right shoulder and a broken right arm.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck by object falling from vehicle or machinery-other than vehicle part"
+ },
+ {
+  "id": "H007",
+  "narrative": "An employee was throwing trash in a truck when his finger became caught in a pinch point between the cable and the truck, resulting in a fingertip amputation.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in or compressed by equipment or objects, unspecified"
+ },
+ {
+  "id": "H008",
+  "narrative": "An employee was attempting to reposition a pipe that was being cut on a semi-automatic pipe band saw. His left hand was on the pipe when the hydraulic pipe clamp was activated. His left middle fingertip was then caught between the clamp palate and the pipe's side wall, requiring surgical amputation.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery during regular operation"
+ },
+ {
+  "id": "H009",
+  "narrative": "An employee was demolishing old railroad tracks and moving rails from the track. He was attempting to hook the rail dog machine up on to the old rails that were lying on top of some old cross ties when the rail slid off the top of the cross ties and fell on and fractured his right foot.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck by falling object or equipment, n.e.c."
+ },
+ {
+  "id": "H010",
+  "narrative": "An employee was clearing paper from underneath a sheeting machine when their hand was caught by the machine's belt and pulled into the machine, resulting in  amputation of the ring finger and a partial amputation of the middle finger.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery, unspecified"
+ },
+ {
+  "id": "H011",
+  "narrative": "An employee was shutting down the stacker machine and amputated the right ring finger to the first joint when the machine caught his finger between the belt and the gear.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery during regular operation"
+ },
+ {
+  "id": "H012",
+  "narrative": "An employee was cleaning a cement mixer when the mixer paddle struck the employee's finger, resulting in an amputation to the right index finger.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery during maintenance, cleaning "
+ },
+ {
+  "id": "H013",
+  "narrative": "An employee was trying to dislodge a 4-inch metal cone off of a 15-inch metal rod by striking the rod against a fixture. His left index finger became caught between the cone and the fixture, resulting in amputation of the fingertip.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Injured by slipping or swinging object held by injured worker"
+ },
+ {
+  "id": "H014",
+  "narrative": "An employee was inspecting the engine of a dump truck. The engine was started and an alternator belt amputated one of the employee's fingertips.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery during maintenance, cleaning "
+ },
+ {
+  "id": "H015",
+  "narrative": "An employee fell approximately 7 feet from an elevated picker while picking an order from the second level up. He landed between the mast and forks of a forklift, suffering bruising on his left side, a collapsed lung, brain bleeding, and facial injuries.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level 6 to 10 feet"
+ },
+ {
+  "id": "H016",
+  "narrative": "An employee was stocking inventory when they tripped over a pallet and fell on the floor, resulting in a left shoulder fracture.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall on same level due to tripping over an object "
+ },
+ {
+  "id": "H017",
+  "narrative": "An employee was picking up parts from a warehouse when he fell down a flight of stairs and struck the concrete floor. The employee was hospitalized with a fractured neck and back.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level, unspecified"
+ },
+ {
+  "id": "H018",
+  "narrative": "An employee was performing roofing operations at a house when he walked over the opening of a skylight that had been covered with insulation and fell through it approximately 8 feet to the ground. He received cuts to his head, possible broken ribs, and a back injury, requiring hospitalization.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall through surface or existing opening 6 to 10 feet"
+ },
+ {
+  "id": "H019",
+  "narrative": "An employee was in the seat of a self-loading center-mount crane. He fell out of the operator's seat, striking the load and falling to the ground, unconscious. The employee sustained injuries to the head, neck, and back, along with broken ribs and severe bruising.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level, unspecified"
+ },
+ {
+  "id": "H020",
+  "narrative": "An employee was walking around the facility taking readings when he stepped and fell into a U-drain. Hot condensation in the drain caused thermal burns on both legs below the knee.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall through surface or existing opening, unspecified"
+ },
+ {
+  "id": "H021",
+  "narrative": "An employee was dismantling a scaffold when he fell 12 feet.  He broke his left hip and pelvis.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level 11 to 15 feet "
+ },
+ {
+  "id": "H022",
+  "narrative": "An employee was using a ladder, missed a step, fell, and fractured his leg.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level, unspecified"
+ },
+ {
+  "id": "H023",
+  "narrative": "On May 19, 2021, an employee was throwing away a display into the top of the dumpster when he slipped and fell off of the dock ledge to the ground about 3.5 to 4 feet below. He suffered a fractured femur and was hospitalized.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level less than 6 feet"
+ },
+ {
+  "id": "H024",
+  "narrative": "An employee was helping to replace a conveyor belt on a slitter machine that was suspended by a crane when the employee's foot slipped through two steel plates. The plates then sprung back and pinned the employee's left lower leg between the two, causing severe contusions.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall through surface or existing opening, unspecified"
+ },
+ {
+  "id": "H025",
+  "narrative": "An employee drove off the road while delivering shingles with a forklift. The forklift overturned and crushed the employee.",
+  "true_group": "Transportation incidents",
+  "true_event": "Roadway noncollision incident, n.e.c."
+ },
+ {
+  "id": "H026",
+  "narrative": "An employee was moving dirt with a skid-steer when it contacted a hard object. The employee's left leg got caught in the bucket resulting in a facture requiring inpatient hospitalization.",
+  "true_group": "Transportation incidents",
+  "true_event": "Nonroadway noncollision incident, n.e.c."
+ },
+ {
+  "id": "H027",
+  "narrative": "On August 25, 2022, an employee was driving a utility task vehicle (UTV) when it overturned. The employee was ejected and struck a tree, suffering two fractures in the neck.",
+  "true_group": "Transportation incidents",
+  "true_event": "Jack-knifed or overturned, nonroadway"
+ },
+ {
+  "id": "H028",
+  "narrative": "An employee was walking through the dock when they were struck by a forklift, resulting in a left ankle fracture.",
+  "true_group": "Transportation incidents",
+  "true_event": "Pedestrian struck by vehicle in nonroadway area, unspecified"
+ },
+ {
+  "id": "H029",
+  "narrative": "The employee, a rural mail carrier, observed a pick-up truck traveling towards her at a high rate of speed and possibly out of control. She was operating a personal vehicle, and pulled over to avoid the pick-up. The pick-up truck struck the employee's vehicle causing the air bags to deploy. The employee suffered broken ribs.",
+  "true_group": "Transportation incidents",
+  "true_event": "Roadway collision-moving and standing vehicle on side of roadway"
+ },
+ {
+  "id": "H030",
+  "narrative": "An employee was driving a stand-up forklift out of a freezer. His left foot was caught between the forklift and a bollard. He suffered a laceration to the foot and ankle.",
+  "true_group": "Transportation incidents",
+  "true_event": "Part of occupant\u2019s body caught between vehicle and other object in nonroadway transport incident"
+ },
+ {
+  "id": "H031",
+  "narrative": "An employee was straightening a counter in a hardware department. A bottle of liquid drain opener fell, and its cap and seal broke. The liquid spilled onto the employee, causing chemical burns to her right leg, face, and arms. She was hospitalized.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Exposure through intact skin, eyes, or other exposed tissue"
+ },
+ {
+  "id": "H032",
+  "narrative": "An employee of Dreisilker was working as a field service technician, performing infrared testing for a customer. The employee was walking away while a third-party contractor employee was closing the door of a fuse box. An arc flash came from the fuse box and burned both employees, and they were both hospitalized. The Dreisilker employee sustained burns to the right hand, and on the left side of the neck, forearm and face.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Direct exposure to electricity, unspecified"
+ },
+ {
+  "id": "H033",
+  "narrative": "An employee was preparing a line for maintenance work. The line contained a combination of propane and hydrofluoric acid. He was hooking up the hose to the valve to put a vacuum on the line and pull out the remaining chemicals. Before he could place the hose on the valve, residual chemicals came out and splashed his legs, causing skin burns. He was hospitalized.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Exposure through intact skin, eyes, or other exposed tissue"
+ },
+ {
+  "id": "H034",
+  "narrative": "An employee received an electric shock while troubleshooting a marinade injector machine. Moisture and water had entered the 220V plug on the side of the machine, causing an instant shock and partial right-side paralysis to the employee.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Direct exposure to electricity, 220 volts or less"
+ },
+ {
+  "id": "H035",
+  "narrative": "An employee fixing a generator left an open container with about a gallon of gasoline next to the HVAC intake on the roof. Two employees were hospitalized after being poisoned by gasoline fumes.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Inhalation of harmful substance-single episode"
+ },
+ {
+  "id": "H036",
+  "narrative": "An employee was operating a motorized line driver to paint lines on the apron at an airport. The employee became ill due to the heat and was hospitalized for heat exhaustion and dehydration.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Exposure to environmental heat"
+ },
+ {
+  "id": "H037",
+  "narrative": "A security guard was punched in the face, suffering a broken jaw.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Hitting, kicking, beating, shoving"
+ },
+ {
+  "id": "H038",
+  "narrative": "A security officer sustained a lumbar strain while taking a patient out of restraints and was hospitalized.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Injured by physical contact with person while restraining, subduing-unintentional"
+ },
+ {
+  "id": "H039",
+  "narrative": "An employee was delivering auto parts to a customer location on July 9, 2015 where he was attacked by a dog and bitten on the hand. On July 13, 2015, he was hospitalized to receive vaccinations and to treat the infected wound.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Other animal bites, nonvenomous"
+ },
+ {
+  "id": "H040",
+  "narrative": "An employee was stabbed in the abdomen by another employee with a sharp object.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Stabbing, cutting, slashing, piercing"
+ },
+ {
+  "id": "H041",
+  "narrative": "A security guard was trying to quell an argument between two park patrons when they began fighting. The guard was grabbed from behind and thrown to the ground and the two patrons fell on her. She suffered broken ribs and a head injury.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Hitting, kicking, beating, shoving"
+ },
+ {
+  "id": "H042",
+  "narrative": "A nurse was visiting a patient's home to change out the regulator on the patient's oxygen tank. Oxygen from the tank ignited causing third degree burns to the employee's hands.",
+  "true_group": "Fires and explosions",
+  "true_event": "Ignition of vapors, gases, or liquids"
+ },
+ {
+  "id": "H043",
+  "narrative": "An employee was bringing aerosol cans to room temperature when one of the cans ruptured and struck the employee's right cheek, causing a laceration.",
+  "true_group": "Fires and explosions",
+  "true_event": "Explosion of pressure vessel, piping, or tire"
+ },
+ {
+  "id": "H044",
+  "narrative": "An employee was lighting wood debris on fire. The thinner he was using exploded, burning his face and arm.",
+  "true_group": "Fires and explosions",
+  "true_event": "Ignition of vapors, gases, or liquids"
+ },
+ {
+  "id": "H045",
+  "narrative": "Employee burned by flash fire at pumping station while adjusting compressor.",
+  "true_group": "Fires and explosions",
+  "true_event": "Ignition of vapors, gases, or liquids"
+ },
+ {
+  "id": "H046",
+  "narrative": "Two employees were mixing Sulphur in a mixer when it exploded, causing burn injuries to both of the employee's hands. They were hospitalized.",
+  "true_group": "Fires and explosions",
+  "true_event": "Explosion, n.e.c."
+ },
+ {
+  "id": "H047",
+  "narrative": "An employee slipped the thoracic disc in her back while helping a driver lift a package into the truck.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Overexertion in lifting-single episode"
+ },
+ {
+  "id": "H048",
+  "narrative": "An employee was opening the door to a delivery trailer with the help of two other employees. He was hospitalized for treatment of a pinched nerve on his lower back.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Overexertion involving outside sources, unspecified"
+ },
+ {
+  "id": "H049",
+  "narrative": "An employee and his coworker were holding a 3-feet-long pipe that was 4 inches in diameter and approximately 30 pounds to move it inside a ship. As they set the pipe inside the boat, the employee felt a pull in his groin. He was hospitalized and required surgery.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Overexertion in holding, carrying, or wielding-single episode"
+ },
+ {
+  "id": "H050",
+  "narrative": "The employee had a heart attack while going up and down jet bridge stairs.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Climbing or stepping up or down-repetitive or prolonged"
+ }
+]

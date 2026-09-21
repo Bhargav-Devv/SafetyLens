@@ -1,0 +1,302 @@
+[
+ {
+  "id": "V001",
+  "narrative": "An employee was operating a hoist and while trying to unhook the basket the employee's right middle finger was caught by the hook and the fingertip was amputated.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Compressed or pinched by shifting objects or equipment"
+ },
+ {
+  "id": "V002",
+  "narrative": "On 7/26/2018, an employee's finger was caught in an auger, resulting in a right middle finger amputation at the first digit. On 7/28/2018, an employee's fingers were caught in a belt and pulley powered by an electric motor, resulting in an amputation of the left index and middle fingers at the second knuckle. This record contains two separate events that were reported simultaneously to OSHA by the employer. These events are captured as one report.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in or compressed by equipment or objects, unspecified"
+ },
+ {
+  "id": "V003",
+  "narrative": "On August 29, 2021, an employee was cleaning dough from the roller of a chunker hopper. As he was removing a piece of dough, his left hand was caught by a roller of the chunker machine. He suffered an amputation of the index finger, as well as crushing injuries to the left middle and ring fingers.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery during maintenance, cleaning "
+ },
+ {
+  "id": "V004",
+  "narrative": "An employee was unloading a produce truck using a pallet jack. The momentum of a pallet as it came down pushed her into another pallet. She suffered an injury to the right ankle and was hospitalized, requiring surgery.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Contact with objects and equipment, unspecified"
+ },
+ {
+  "id": "V005",
+  "narrative": "An employee was cleaning the inside of an incline auger when the running blade amputated her right middle fingertip.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in running equipment or machinery during maintenance, cleaning "
+ },
+ {
+  "id": "V006",
+  "narrative": "An employee was moving a pumping unit into the top-dead-bottom position. He stood behind the pump jack motor and began pushing on the belt to help roll the pump unit. The unit moved and suddenly shifted. The employee then slipped and lost his balance. His left hand contacted the bottom belt and was pulled into and around the motor sheave, amputating his left pinky fingertip and lacerating and fracturing his left ring and middle fingers.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Caught in or compressed by equipment or objects, unspecified"
+ },
+ {
+  "id": "V007",
+  "narrative": "On June 14, 2017, an employee was oiling the thumb of an excavator when the employee's hand became trapped between the excavator's bucket and thumb. The employee suffered left hand fractures and lacerations, requiring hospitalization.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Compressed or pinched by shifting objects or equipment"
+ },
+ {
+  "id": "V008",
+  "narrative": "An employee was cutting scrap with a vertical bandsaw when the back of the employee's hand contacted the blade and was lacerated. The employee was hospitalized.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck against moving part of machinery or equipment"
+ },
+ {
+  "id": "V009",
+  "narrative": "An employee was closing a gate. His middle and ring fingertips were caught between the gate and its guide wheel and amputated.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck by or caught in swinging door or gate"
+ },
+ {
+  "id": "V010",
+  "narrative": "An employee suffered a left ankle injury when it was struck by a moving vehicle while his leg was still outside of the vehicle.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck or run over by rolling powered vehicle"
+ },
+ {
+  "id": "V011",
+  "narrative": "An employee was lowering the wheels on a tractor-trailer when the crank started to spin and struck him in the head. He suffered a concussion and was hospitalized.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck by swinging part of powered vehicle"
+ },
+ {
+  "id": "V012",
+  "narrative": "An employee was grinding a flywheel on a lathe. As the machine was winding down, the employee's fingertips were trapped between the wheel and the grinder. The employee suffered amputations to the left little and ring fingers above the first knuckle.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Struck against moving part of machinery or equipment"
+ },
+ {
+  "id": "V013",
+  "narrative": "An employee was loading a tanker in a receiving bay when the valve on the tanker truck actuated. The employee's hand was on the valve handle when it moved inward and crushed his right index finger against the valve body. The employee's fingertip was amputated.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Compressed or pinched by shifting objects or equipment"
+ },
+ {
+  "id": "V014",
+  "narrative": "An employee was injured while operating a handheld drill. The drill bit slipped and struck the employee's left hand while she was holding a piece of plastic and drilling.",
+  "true_group": "Contact with objects and equipment",
+  "true_event": "Injured by slipping or swinging object held by injured worker"
+ },
+ {
+  "id": "V015",
+  "narrative": "An employee was climbing a 28-foot extension ladder to attach an aerial service wire to a communications pole when the pole snapped due to wood rot. The employee fell 15 feet to the ground and broke his left arm, requiring hospitalization.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level 11 to 15 feet "
+ },
+ {
+  "id": "V016",
+  "narrative": "An employee was preparing to pour concrete for a bridge tower/column. He was descending the tower when he fell approximately 16 feet to the ground, breaking his right-side hip and ribs.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level 16 to 20 feet"
+ },
+ {
+  "id": "V017",
+  "narrative": "A truck driver fell from his truck and sustained fractured ribs, thumb, back, and face, along with a brain bleed.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level, unspecified"
+ },
+ {
+  "id": "V018",
+  "narrative": "An employee slipped on ice and fell to the ground while walking in the parking lot, breaking a leg.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall on same level due to slipping "
+ },
+ {
+  "id": "V019",
+  "narrative": "At about 9:20 a.m. on August 1, 2019, an employee slipped on a spot of water in a hallway and fell, suffering a torn right hamstring. The employee was hospitalized.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall on same level due to slipping "
+ },
+ {
+  "id": "V020",
+  "narrative": "An employee was walking to a patient's room when a bug ran toward her. As she was moving away, she backed up, lost her balance, and fell, fracturing her right ankle and requiring hospitalization.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall on same level, n.e.c. "
+ },
+ {
+  "id": "V021",
+  "narrative": "An employee was descending a 28-foot ladder when a gust of wind knocked the ladder off of the cable. The ladder has a hook at the end, and the employee had the ladder hook on the cable. The hook knocked his ladder off of the cable strand. He broke his leg.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level 26 to 30 feet"
+ },
+ {
+  "id": "V022",
+  "narrative": "An employee was making a bed when she tripped on the sheets and fell to the floor, injuring her right shoulder and back.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Fall on same level due to tripping over an object "
+ },
+ {
+  "id": "V023",
+  "narrative": "An employee was fixing a hunting tree stand on the business owner's property. He was standing on a ladder tightening a strap with a ratcheting tool. The strap broke as he was tightening it, causing him to lose his balance and fall approximately 6 feet to the ground. He was hospitalized with fractured vertebrae.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level 6 to 10 feet"
+ },
+ {
+  "id": "V024",
+  "narrative": "An employee was sitting on a mechanic's step stool on wheels installing a pump. The employee extended his feet and the step stool tipped over causing him to fall off. As he was falling, he tried to brace himself and suffered a right wrist fracture that required surgery.",
+  "true_group": "Falls, slips, trips",
+  "true_event": "Other fall to lower level, unspecified"
+ },
+ {
+  "id": "V025",
+  "narrative": "An employee was taking a wheel out of the Kort nozzle on a boat. The employee was pulling out the wheel using a crane and a come-a-long when waves hit the bottom of the boat and caused the load to shift and land on him, breaking his left foot/ankle and pinching his left ring finger.",
+  "true_group": "Transportation incidents",
+  "true_event": "Machinery or equipment incident on water vehicle"
+ },
+ {
+  "id": "V026",
+  "narrative": "On August 11, 2016, at approximately 8:30 AM, a forklift ran over an employee's right foot, breaking it. The employee was hospitalized.",
+  "true_group": "Transportation incidents",
+  "true_event": "Pedestrian struck by vehicle backing up in nonroadway area"
+ },
+ {
+  "id": "V027",
+  "narrative": "On 4/16/16, an employee was struck by a reversing forklift. He suffered serious leg/ankle injuries and was hospitalized.",
+  "true_group": "Transportation incidents",
+  "true_event": "Pedestrian struck by vehicle backing up in nonroadway area"
+ },
+ {
+  "id": "V028",
+  "narrative": "An employee was standing outside his forklift, cleaning it, when another forklift backed into him. He suffered internal injuries.",
+  "true_group": "Transportation incidents",
+  "true_event": "Pedestrian struck by vehicle backing up in nonroadway area"
+ },
+ {
+  "id": "V029",
+  "narrative": "An employee was operating an electric, sit-down forklift to transport solid wood doors. The doors began to split and the employee raised their hand through the forklift. The doors struck the employee in the left hand, resulting in a finger amputation.",
+  "true_group": "Transportation incidents",
+  "true_event": "Struck by shifting load during transport, nonroadway"
+ },
+ {
+  "id": "V030",
+  "narrative": "An employee was backing a telehandler off of a dovetail trailer when the right rear tire rolled off the side of the trailer, causing the telehandler to roll over. The employee suffered head injuries, a broken clavicle, broken ribs, and two fractured vertebrae, requiring hospitalization.",
+  "true_group": "Transportation incidents",
+  "true_event": "Jack-knifed or overturned, nonroadway"
+ },
+ {
+  "id": "V031",
+  "narrative": "An employee was hospitalized due to carbon monoxide exposure.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Inhalation of harmful substance-single episode"
+ },
+ {
+  "id": "V032",
+  "narrative": "On October 20, 2020, at approximately 7:35PM, an employee was placing boxes of bleach onto a conveyor system. The bottom of a box broke causing bottles of bleach to fall out. One bottle struck the conveyor and broke open splashing bleach into the employee's face. The employee was hospitalized for treatment.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Ingestion of harmful substance"
+ },
+ {
+  "id": "V033",
+  "narrative": "An employee was hospitalized after he fainted in a sugar cane field due to heat stress.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Exposure to environmental heat"
+ },
+ {
+  "id": "V034",
+  "narrative": "There was an electrical outage caused by a tree limb that fell on a 13.2 kV distribution line. The injured employee and two co-workers were working to put the middle phase back up and restore power. While raising the downed wire, the injured employee contacted the tail of the wire with his face and an arc flash occurred. The employee was hospitalized with burns to the left side of their face, left arm, and shoulder.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Direct exposure to electricity, greater than 220 volts"
+ },
+ {
+  "id": "V035",
+  "narrative": "An employee was working on a steam line to repair two visible condensation leaks on a bottle washer. An in-line ball valve was opened causing steam to exit a open pipe and burn the employee on the left side of their torso.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Contact with hot objects or substances"
+ },
+ {
+  "id": "V036",
+  "narrative": "An employee was setting up to weld a shipping container and moved the welding machine inside the shipping container. As the employee was plugging the machine into a 220-volt extension cord, they sustained an electric shock and a left hand burn.",
+  "true_group": "Exposure to harmful substances/environments",
+  "true_event": "Direct exposure to electricity, 220 volts or less"
+ },
+ {
+  "id": "V037",
+  "narrative": "An employee was assaulted by an employee of another contractor, suffering a crushed esophagus, a shattered nose, and bruises to the face.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Hitting, kicking, beating, shoving"
+ },
+ {
+  "id": "V038",
+  "narrative": "An employee was walking up to a patient's home to begin working when the neighbor's dog lunged off the porch and attacked her. Her wrist was fractured when the dog grabbed her arm.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Other animal bites, nonvenomous"
+ },
+ {
+  "id": "V039",
+  "narrative": "An employee was standing in the reception area when a co-worker collided with her. The employee fell to the ground and landed on her wrist, resulting in a possible fracture.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Injury by other person-unintentional or intent unknown, n.e.c."
+ },
+ {
+  "id": "V040",
+  "narrative": "An employee was helping a resident down a flight of stairs. The employee stepped down one step; the resident reached for the employee to steady her gait. The employee lost her balance and fell down the flight of stairs to a landing. She suffered a back injury (with bruising but no broken bones) and was hospitalized.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Injury by other person-unintentional or intent unknown, n.e.c."
+ },
+ {
+  "id": "V041",
+  "narrative": "An employee was administering medications to the cows when a cow moved into him and hit his lower right leg, causing a fracture. The employee was hospitalized overnight.",
+  "true_group": "Violence / injury by persons or animals",
+  "true_event": "Struck by animal, n.e.c."
+ },
+ {
+  "id": "V042",
+  "narrative": "An employee was cutting on a five gallon drum with an acetylene torch. The residue in the drum flashed over and the employee suffered burns to his face, chest, and arms and was hospitalized.",
+  "true_group": "Fires and explosions",
+  "true_event": "Ignition of vapors, gases, or liquids"
+ },
+ {
+  "id": "V043",
+  "narrative": "An employee was replacing a gas line. When the employee began to cut the line, a fire caused second-degree burns to the employee's right arm, neck, and face.",
+  "true_group": "Fires and explosions",
+  "true_event": "Ignition of vapors, gases, or liquids"
+ },
+ {
+  "id": "V044",
+  "narrative": "Two employees were using a propane torch to thaw a valve on a water tanker trailer. There was an explosion and both employees were burned.",
+  "true_group": "Fires and explosions",
+  "true_event": "Explosion, unspecified"
+ },
+ {
+  "id": "V045",
+  "narrative": "An employee was welding an oil pipe and installing a gauge on the pipe of a drilling rig. As he cut into it with a torch, an explosion occurred. The shockwave of the explosion caused the employee to sustain a concussion and multiple broken bones.",
+  "true_group": "Fires and explosions",
+  "true_event": "Explosion, unspecified"
+ },
+ {
+  "id": "V046",
+  "narrative": "An employee was preparing to cut metal scrap with an acetylene torch. The employee's glove caught fire, and the employee suffered burns to the left hand. The employee was hospitalized.",
+  "true_group": "Fires and explosions",
+  "true_event": "Ignition of clothing from controlled heat source"
+ },
+ {
+  "id": "V047",
+  "narrative": "An employee experienced a stroke while moving boxes off a pallet and onto a table.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Overexertion involving outside sources, unspecified"
+ },
+ {
+  "id": "V048",
+  "narrative": "In swatting at a bee near his face, an employee turned vigorously, suffered a broken left leg, and fell to the ground.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Bending, crawling, reaching, twisting-single episode"
+ },
+ {
+  "id": "V049",
+  "narrative": "An employee was hospitalized after breaking a hip while walking in a sewer.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Walking, without other incident-single episode"
+ },
+ {
+  "id": "V050",
+  "narrative": "An employee was carrying curb forms and experienced chest pain and fell to the ground.",
+  "true_group": "Overexertion and bodily reaction",
+  "true_event": "Overexertion in holding, carrying, or wielding-single episode"
+ }
+]

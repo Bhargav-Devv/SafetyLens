@@ -1,0 +1,24 @@
+---
+description: Machine learning and data rules
+globs: ["src/data.py", "src/model.py", "src/retrieval.py", "src/pipeline.py"]
+---
+
+# ML rules
+
+- **Always report a baseline.** A number with nothing to compare it to is not a result.
+- Fix the seed (`config.SEED`) and record it in the output.
+- Stratify by the target. Touch the test set once.
+- **Refuse to report metrics for classes with fewer than 10 test examples.**
+- **Check what the label actually contains before building on it.** Severity prediction was removed
+  from this project because every record was already severe — ADR-006.
+- **When two models disagree on an obvious case, investigate before trusting the metric.** That is
+  how ADR-007 was found: the accuracy number looked healthy while 2,192 incidents were misfiled.
+
+## Data facts that cost hours to discover
+
+- The OSHA CSV is **Windows-1252**, not UTF-8. Do not "fix" this by forcing UTF-8.
+- OIICS event codes are **variable length** (`64`, `531`, `1214`). The major group is the first digit
+  **as written** — `str(int(code))[0]`. Never `.zfill(4)[0]`.
+- Section bodies average ~10,000 characters, which drowns plain TF-IDF. Title weighting and the
+  hazard boost are what make retrieval work — ADR-008.
+- `osha.gov` blocks scripted downloads; figshare returns HTTP 202 with an empty body for large ones.

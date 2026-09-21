@@ -1,0 +1,21 @@
+---
+description: Documentation maintenance
+globs: ["**/*.md"]
+---
+
+# Documentation rules
+
+- **If a result changes, update `docs/results.md` in the same commit.** Stale numbers are worse than
+  no numbers.
+- Update `docs/MEMORY.md` when project state changes.
+- Add an ADR to `docs/DECISIONS.md` for any architectural decision — do not bury it in a commit
+  message.
+- Tick the box in `TASKS.md` when a task completes.
+- Keep `.env.example` current with every new environment variable, values blank.
+
+## Honesty rules
+
+- A component that is specified but not built must say so, in every document that mentions it.
+- State limitations in the document; do not leave them for a reviewer to discover.
+- Never report a metric that cannot be defended. "No ground truth exists for this" is a complete
+  answer — see retrieval in `results.md`.

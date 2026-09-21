@@ -1,0 +1,280 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SafetyLens",
+    "description": "Hazard classification and OSHA regulation retrieval for workplace incident narratives.\n\n**Branch on `status`, never on prose.** `abstained` means the classifier declined and the caller must ask for detail rather than guess. `no_specific_standard` means no OSHA standard exists for this hazard and the General Duty Clause applies - it is a complete answer, not a failure to find one.\n\nRegulation text is quoted verbatim from eCFR and is never generated.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "meta"
+        ],
+        "summary": "Readiness and the thresholds currently in force",
+        "operationId": "health",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Health"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/analyse_incident": {
+      "post": {
+        "tags": [
+          "tools"
+        ],
+        "summary": "Classify a hazard, retrieve applicable standards, find similar incidents",
+        "description": "ALWAYS call this before saying anything about a hazard or a regulation.\n\nRead `status` first: `insufficient_input`, `abstained`, or `classified`.\nThen `standards_status`: `matched`, `no_specific_standard`, `no_match`, or\n`not_attempted`. Never answer from your own knowledge of OSHA.",
+        "operationId": "analyse_incident",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IncidentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Analyse Incident"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/explain_standard": {
+      "post": {
+        "tags": [
+          "tools"
+        ],
+        "summary": "Full verbatim text of one section of 29 CFR 1910",
+        "description": "Quote what comes back. Never paraphrase a regulation, and never supply\nsection text from memory. `status` is `found`, `not_found` or\n`invalid_section`; a `not_found` result carries no text at all.",
+        "operationId": "explain_standard",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SectionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Explain Standard"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/find_similar": {
+      "post": {
+        "tags": [
+          "tools"
+        ],
+        "summary": "Most similar past incidents from ~86,000 OSHA reports",
+        "description": "Historical reports, not regulations. Never cite one as a requirement.",
+        "operationId": "find_similar",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimilarRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Find Similar"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "IncidentRequest": {
+        "properties": {
+          "narrative": {
+            "type": "string",
+            "title": "Narrative",
+            "description": "Plain-language description of what happened. Richer is better: activity, equipment, motion, body part.",
+            "example": "Employee was cleaning a conveyor belt while it was running when his sleeve became caught in the rollers."
+          }
+        },
+        "type": "object",
+        "required": [
+          "narrative"
+        ],
+        "title": "IncidentRequest"
+      },
+      "SectionRequest": {
+        "properties": {
+          "section": {
+            "type": "string",
+            "title": "Section",
+            "description": "e.g. '1910.147', '29 CFR 1910.219', '1910.28(b)'.",
+            "example": "1910.147"
+          }
+        },
+        "type": "object",
+        "required": [
+          "section"
+        ],
+        "title": "SectionRequest"
+      },
+      "SimilarRequest": {
+        "properties": {
+          "narrative": {
+            "type": "string",
+            "title": "Narrative",
+            "description": "Incident description."
+          },
+          "k": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "title": "K",
+            "description": "How many to return.",
+            "default": 3
+          }
+        },
+        "type": "object",
+        "required": [
+          "narrative"
+        ],
+        "title": "SimilarRequest"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://REPLACE-WITH-YOUR-PUBLIC-URL",
+      "description": "Set this to the public HTTPS URL of this service before importing. watsonx Orchestrate calls the URL in this field."
+    }
+  ]
+}

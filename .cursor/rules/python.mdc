@@ -1,0 +1,24 @@
+---
+description: Python coding standards
+globs: ["**/*.py"]
+---
+
+# Python standards
+
+- Python 3.10+, type hints on public functions
+- `from __future__ import annotations` at the top of every module
+- Module docstring explains **why the module exists**, not what the language does
+- Imports: standard library, then third-party, then local
+- No bare `except:` — catch what you can handle
+- Max line length 100
+- No leftover print-debugging
+
+## Module boundaries
+
+See the responsibility table in `docs/ARCHITECTURE.md`. In short:
+
+- `src/data.py` knows nothing about models
+- `src/pipeline.py` orchestrates; it does not train
+- `src/retrieval.py` ranks; it never modifies the text it returns
+- `main.py` wires the CLI; it holds no business logic
+- No module writes outside `out/` and `data/`

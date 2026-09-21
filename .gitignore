@@ -1,0 +1,28 @@
+# Data — never commit the corpus
+data/raw/*
+!data/raw/.gitkeep
+data/standards.json
+
+# Models and outputs
+out/*.joblib
+out/*.json
+out/*.png
+*.log
+
+# Secrets
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
