@@ -291,8 +291,9 @@ class AssistantLLM:
                     self.trace.append({"event": "guard_blocked", "rule": violation.rule,
                                        "detail": violation.detail})
                     return self._blocked(text, violation)
-                self.trace.append({"event": "reply", "guard": "passed"})
-                return reply
+                # Never display free-form model text; render only deterministic validated results.
+                self.trace.append({"event": "reply", "guard": "passed", "rendered": "deterministic"})
+                return self.fallback.respond(text)
 
             for call in calls:
                 fn = call["function"]["name"]
