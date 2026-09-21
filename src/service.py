@@ -28,7 +28,7 @@ import config as cfg
 from src import data, pipeline
 
 # "29 CFR 1910.219(a)(2)" / "1910.219" / "§1910.219"  ->  "1910.219"
-_SECTION_RE = re.compile(r"(1910\.\d+)")
+_SECTION_RE = re.compile(r"(\d{4}\.\d+)")
 
 MIN_INPUT_CHARS = 10
 MAX_SIMILAR = 10
@@ -178,7 +178,7 @@ class SafetyLensService:
                                    "comparable within this result, not across "
                                    "incidents. lexical_score is the calibrated "
                                    "one. See ADR-019."),
-                    "source": "eCFR, Title 29 Part 1910 - verbatim, not generated",
+            "source": "eCFR, Title 29 Part {} - verbatim, not generated".format(s["section"].split(".")[0]),
                 }
                 for s in result["standards"]
             ],
@@ -207,7 +207,7 @@ class SafetyLensService:
                 "status": "invalid_section",
                 "requested": raw,
                 "message": ("Section must look like 1910.219 or 29 CFR 1910.219. "
-                            "Only 29 CFR Part 1910 is in this corpus."),
+                            "Only sections present in the cached Title 29 corpus can be quoted."),
             }
 
         key = m.group(1)
@@ -219,7 +219,7 @@ class SafetyLensService:
                 "status": "not_found",
                 "requested": key,
                 "message": (f"{key} is not in the cached corpus "
-                            f"({len(self._by_section)} sections of 29 CFR 1910). "
+                            f"({len(self._by_section)} cached Title 29 sections). "
                             "It may exist but fall below the length threshold, or "
                             "sit in another Part."),
                 "suggestions_not_the_answer": near,
@@ -232,7 +232,7 @@ class SafetyLensService:
             "title": found["title"],
             "text": found["text"],
             "characters": len(found["text"]),
-            "source": "eCFR, Title 29 Part 1910 - verbatim, not generated",
+            "source": "eCFR, Title 29 Part {} - verbatim, not generated".format(found["section"].split(".")[0]),
         }
 
     # -- tool 3 -------------------------------------------------------------

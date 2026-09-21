@@ -102,7 +102,7 @@ def test_every_returned_standard_carries_a_citation():
     r = SVC.analyse_incident(CONVEYOR)
     assert r["standards_status"] == "matched"
     for s in r["standards"]:
-        assert s["citation"].startswith("29 CFR 1910.")
+        assert s["citation"].startswith("29 CFR ")
         assert s["section"] and s["title"] and s["quote"]
         assert "verbatim, not generated" in s["source"]
 
@@ -290,11 +290,13 @@ def test_add_part_writes_provenance_that_survives_a_reload():
             cfg.DATA_DIR = original
 
 
-def test_no_section_in_the_live_index_is_outside_part_1910():
-    """The corpus this build actually holds is 29 CFR 1910 and nothing else.
-    Anything else appearing is either an un-provenanced cache or a mistake."""
-    stray = [s["section"] for s in SVC.lens.standards
-             if not s["section"].startswith("1910.")]
+def test_every_live_index_section_is_from_a_configured_part():
+    """The live corpus may contain authenticated configured CFR Parts."""
+    allowed = {"1910", *cfg.EXTRA_PARTS}
+    stray = [
+        s["section"] for s in SVC.lens.standards
+        if s["section"].split(".", 1)[0] not in allowed
+    ]
     assert not stray, f"unexpected sections in the index: {stray}"
 
 
