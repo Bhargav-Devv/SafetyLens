@@ -280,14 +280,14 @@ class StandardsIndex(Index):
             hits = self._keyword_hits(title, keywords)
             if hits:
                 tier[i] = 0
-                scores[i] *= 1 + cfg.KEYWORD_BOOST * min(hits, 2)
+                scores[i] += cfg.KEYWORD_BOOST * min(hits, 2)
                 continue
             if self.standards[i]["section"] in cfg.NO_SCOPE_ROUTING:
                 continue  # reachable by title only - see config.NO_SCOPE_ROUTING
             scope_hits = self._keyword_hits(self.scopes[i], scope_keywords)
             if scope_hits:
                 tier[i] = 1
-                scores[i] *= 1 + cfg.SCOPE_BOOST * min(scope_hits, 2)
+                scores[i] += cfg.SCOPE_BOOST * min(scope_hits, 2)
 
         candidates = [i for i in range(len(scores)) if tier[i] < 2]
         candidates = self._apply_floor(candidates, scores)

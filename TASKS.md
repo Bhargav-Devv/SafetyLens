@@ -82,6 +82,15 @@ Supersedes ADR-010 via ADR-013.
 
 ---
 
+## Phase 1c — IBM Bob (the IDE) usage  ✅ code side done
+
+Installed today. The conversational layer was renamed off "Bob" so nothing false is claimed (ADR-028).
+
+- [x] Install IBM Bob (`IBM-BobUserSetup-x64-1.126.0+bob2.1.0.exe`)
+- [x] Rename the assistant so it no longer impersonates the product; `docs/ibm_bob_usage.md` written
+- [ ] Open the repo in Bob, use it, capture the four screenshots in `docs/ibm_bob_usage.md`
+- [ ] Run Bob's Semgrep scan on `serve.py`; record that it flags the documented missing auth
+
 ## Phase 1b — wire the hosted agent  ⬜ BLOCKED on an IBM account
 
 No code. The artefacts exist and are tested.

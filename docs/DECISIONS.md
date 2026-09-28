@@ -898,3 +898,35 @@ that someone will have it again.
 **The general point:** an improvement that targets a defect something else already fixed measures as
 zero, and it is worth knowing *why* it measured as zero rather than just that it did.
 
+---
+
+## ADR-028 — The conversational layer is not "IBM Bob", and saying so it was
+
+**Correction, 2026-09-21. A factual error on the title slide, fixed.**
+
+Until today this project called its own conversational layer **"IBM Bob"** — in `agent_logic.md`, on
+two slides, in the tool contract, in the filenames (`bob_tools.py`, `bob_llm.py`).
+
+**IBM Bob is a real IBM product**: an AI-first IDE and pair developer (desktop app + a CLI called
+BobShell), used to *write* software. It is not a chatbot API you embed in a product. The thing in
+this repository is a tool-calling agent over the SafetyLens pipeline, backed by a watsonx.ai model.
+Calling it "IBM Bob" was a false claim, and a reviewer who knows IBM's line would catch it in
+seconds.
+
+**Fixed:**
+- Everything renamed to **the SafetyLens assistant**: `src/assistant_tools.py`,
+  `src/assistant_llm.py`, `docs/assistant_*.md`. 21 files rewritten; all 37 tests still pass.
+- Deck slides 4 and 11 corrected, and slide 11 now states the correction openly rather than hiding
+  it: *"Not IBM Bob — Bob is IBM's AI IDE, used to build this."*
+- `docs/ibm_bob_usage.md` documents how IBM Bob (the real one) is actually used: as the development
+  environment, with the four screenshots to capture for the submission.
+
+**Why own it rather than quietly swap the strings.** A project whose entire discipline is *never
+claim what you have not verified* — the heat defect, the corpus-poisoning incident, the labelling
+provenance — cannot misname a dependency on its own title slide and pretend it never happened. Stating
+the correction is more credible than a clean rename, and it is consistent with everything else here:
+the claim matches the artefact.
+
+This is the same failure mode as ADR-001, one level up. ADR-001 forbids inventing regulation *text*.
+This forbids inventing a *technology label*. Both are claims that outran the artefact.
+
