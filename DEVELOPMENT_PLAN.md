@@ -1,9 +1,13 @@
 # SafetyLens development plan
 
-**Plan version:** 1.1  
-**Updated:** 2026-10-08  
-**Current product version:** SafetyLens v1.0 — verified submission build  
-**Next planned version:** SafetyLens v1.1 — evidence and state reconciliation  
+**Plan version:** 1.1
+
+**Updated:** 2026-10-08
+
+**Current product version:** SafetyLens v1.0 — verified submission build
+
+**Next planned version:** SafetyLens v1.1 — evidence and state reconciliation
+
 **Research version:** SafetyLens v1.2-experimental — retrieval experiments
 
 This is a planning document. A version is released only after its tasks meet

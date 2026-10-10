@@ -1,8 +1,11 @@
 # Live watsonx assistant results
 
-**Task:** TASK-113  
-**Run:** 2026-10-08  
-**Model:** `ibm/granite-4-h-small`  
+**Task:** TASK-113
+
+**Run:** 2026-10-08
+
+**Model:** `ibm/granite-4-h-small`
+
 **Command:** `python main.py bob --llm`
 
 This is the manual run prescribed by `docs/assistant_test_scenarios.md`. The API key was loaded from
