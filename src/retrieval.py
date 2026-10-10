@@ -99,6 +99,48 @@ class LatentIndex:
         return (raw + 1.0) / 2.0
 
 
+class SentenceTransformerIndex:
+    """Optional dense index for the frozen TASK-302b experiment.
+
+    The dependency and model are loaded only when the experiment is explicitly
+    enabled. Tests inject a small fake encoder, so the normal test suite never
+    downloads weights or imports PyTorch.
+    """
+
+    def __init__(self, documents: list[str], encoder=None):
+        if encoder is None:
+            try:
+                from sentence_transformers import SentenceTransformer
+            except ImportError as exc:
+                raise RuntimeError(
+                    "Sentence-transformer retrieval is enabled but its optional "
+                    "dependency is missing. Install requirements-embeddings.txt."
+                ) from exc
+            encoder = SentenceTransformer(
+                cfg.SENTENCE_TRANSFORMER_MODEL,
+                revision=cfg.SENTENCE_TRANSFORMER_REVISION,
+                device=cfg.SENTENCE_TRANSFORMER_DEVICE,
+            )
+        self.encoder = encoder
+        self.matrix = self._embed(documents)
+
+    def _embed(self, texts: list[str]) -> np.ndarray:
+        vectors = self.encoder.encode(
+            list(texts),
+            batch_size=cfg.SENTENCE_TRANSFORMER_BATCH_SIZE,
+            convert_to_numpy=True,
+            normalize_embeddings=True,
+            show_progress_bar=False,
+        )
+        return np.asarray(vectors, dtype=float)
+
+    def scores(self, query: str) -> np.ndarray:
+        # Embeddings are L2-normalised by the encoder, so the dot product is
+        # cosine similarity. Shift to the same [0, 1] range used by LSA.
+        raw = (self._embed([query]) @ self.matrix.T).ravel()
+        return np.clip((raw + 1.0) / 2.0, 0.0, 1.0)
+
+
 class StandardsIndex(Index):
     """TF-IDF over regulation sections, with title weighting and hazard boost."""
 
@@ -110,9 +152,17 @@ class StandardsIndex(Index):
                      for s in standards]
         super().__init__(documents, min_df=1)
         self.latent: "LatentIndex | None" = None
+        self.dense: "SentenceTransformerIndex | None" = None
 
     def fit_latent(self, narratives) -> None:
-        """Build the latent index. Optional - the lexical path works without it."""
+        """Build the configured semantic index; lexical remains available."""
+        if cfg.USE_SENTENCE_TRANSFORMER:
+            dense_documents = [
+                f"{s['title']}. {s['text'][:cfg.SENTENCE_TRANSFORMER_SCOPE_CHARS]}"
+                for s in self.standards
+            ]
+            self.dense = SentenceTransformerIndex(dense_documents)
+            return
         if not cfg.USE_LSA:
             return
         sample = list(narratives)[:cfg.LSA_FIT_NARRATIVES]
@@ -220,7 +270,12 @@ class StandardsIndex(Index):
         """
         lexical = self._scores(query)
         scores = lexical
-        if cfg.USE_LSA and self.latent is not None:
+        if cfg.USE_SENTENCE_TRANSFORMER and self.dense is not None:
+            # Experimental arm. It replaces the LSA semantic signal rather
+            # than stacking another uncalibrated score on top. The routing and
+            # authoritative-text path below remain identical to the baseline.
+            scores = self.dense.scores(query)
+        elif cfg.USE_LSA and self.latent is not None:
             # NOT ACTUALLY A 50/50 BLEND. Read ADR-019 before changing this.
             #
             # Measured across narratives: lexical scores span 0.00-0.08, latent

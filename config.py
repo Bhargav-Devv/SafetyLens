@@ -227,6 +227,20 @@ LSA_COMPONENTS = 300
 LSA_FIT_NARRATIVES = 20_000   # narratives mixed in so the space learns incident language
 LSA_BLEND = 0.5            # final score = (1-b)*tfidf + b*lsa; 1.0 = pure LSA
 
+# --- Sentence-transformer experiment (TASK-302b) ---------------------------
+#
+# This is deliberately OFF in the submission build. The four labelled
+# retrieval sets have all been spent, so enabling this path without a fifth,
+# untouched set would change user-facing ranking without honest evidence.
+# `all-MiniLM-L6-v2` is small enough for CPU use and is pinned to the exact
+# model revision inspected when this experiment was frozen.
+USE_SENTENCE_TRANSFORMER = False
+SENTENCE_TRANSFORMER_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+SENTENCE_TRANSFORMER_REVISION = "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+SENTENCE_TRANSFORMER_DEVICE = "cpu"
+SENTENCE_TRANSFORMER_BATCH_SIZE = 16
+SENTENCE_TRANSFORMER_SCOPE_CHARS = 1_200
+
 
 # --- Index hygiene and a floor that can actually work (TASK-312, TASK-313) --
 
@@ -312,4 +326,3 @@ EVENT_STOPWORDS = {
     "that", "when", "while", "person", "worker", "employee", "body", "part",
 }
 EVENT_MIN_WORD = 4
-

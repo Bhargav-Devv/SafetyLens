@@ -10,6 +10,7 @@ SafetyLens - command line entry point.
     python main.py transcript         replay the scripted conversation to docs/
     python main.py add-part 1926 F    parse a downloaded eCFR Part XML and cache it
     python main.py evaluate-retrieval measure retrieval against the labelled set
+    python main.py prepare-retrieval-experiment  draw the fifth disjoint set
     python main.py review             second-labeller pass - 15 of the 50
 
 Run `train` once. Everything else loads the saved models.
@@ -251,6 +252,29 @@ def cmd_evaluate_retrieval(holdout="dev") -> None:
     print(f"\n  saved out/{name}")
 
 
+def cmd_prepare_retrieval_experiment() -> None:
+    """Draw the fifth set without consulting either retrieval implementation."""
+    paths = [
+        evalset.SAMPLE_PATH, evalset.HOLDOUT_SAMPLE_PATH,
+        evalset.VALID_SAMPLE_PATH, evalset.CAL_SAMPLE_PATH,
+    ]
+    used = {
+        row["narrative"]
+        for path in paths
+        for row in json.loads(path.read_text(encoding="utf-8"))
+    }
+    if evalset.EXPERIMENT_SAMPLE_PATH.exists():
+        raise SystemExit(
+            f"refusing to overwrite frozen {evalset.EXPERIMENT_SAMPLE_PATH.name}")
+    rows = evalset.build_experiment(_dataset(), used)
+    evalset.EXPERIMENT_SAMPLE_PATH.write_text(
+        json.dumps(rows, indent=1), encoding="utf-8")
+    print(f"wrote {len(rows)} disjoint incidents to "
+          f"{evalset.EXPERIMENT_SAMPLE_PATH.name}")
+    print("Label under docs/retrieval_labelling_guide_v1_1.md before running "
+          "either retrieval arm. Do not inspect retriever output first.")
+
+
 REVIEW_N = 15
 
 
@@ -335,7 +359,8 @@ def cmd_review() -> None:
 COMMANDS = {"train": cmd_train, "demo": cmd_demo, "failures": cmd_failures,
             "review": cmd_review,
             "bob": cmd_bob, "transcript": cmd_transcript,
-            "evaluate-retrieval": cmd_evaluate_retrieval}
+            "evaluate-retrieval": cmd_evaluate_retrieval,
+            "prepare-retrieval-experiment": cmd_prepare_retrieval_experiment}
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -357,6 +382,7 @@ if __name__ == "__main__":
         if "--holdout" in sys.argv: which = "holdout"
         if "--valid" in sys.argv: which = "valid"
         if "--cal" in sys.argv: which = "cal"
+        if "--experiment" in sys.argv: which = "experiment"
         cmd_evaluate_retrieval(which)
     elif action in COMMANDS:
         COMMANDS[action]()

@@ -77,6 +77,13 @@ CAL_SAMPLE_PATH = cfg.DATA_DIR / "retrieval_cal_sample.json"
 CAL_LABELS_PATH = cfg.DATA_DIR / "retrieval_cal_labels.json"
 CAL_SEED = cfg.SEED + 3
 
+# Fifth set for TASK-302b and later frozen retrieval experiments. The earlier
+# four sets remain historical evidence and cannot decide whether a new change
+# ships.
+EXPERIMENT_SAMPLE_PATH = cfg.DATA_DIR / "retrieval_experiment_sample.json"
+EXPERIMENT_LABELS_PATH = cfg.DATA_DIR / "retrieval_experiment_labels.json"
+EXPERIMENT_SEED = cfg.SEED + 4
+
 
 def build_sample(data) -> list[dict]:
     """Draw the sample. Deterministic - same seed, same 50 incidents."""
@@ -181,11 +188,17 @@ def build_valid(data, used: set[str]) -> list[dict]:
     return rows
 
 
+def build_experiment(data, used: set[str]) -> list[dict]:
+    """The fifth, disjoint set governed by labelling guide v1.1."""
+    return build_nth(data, used, EXPERIMENT_SEED, "X")
+
+
 _PATHS = {
     "dev": (SAMPLE_PATH, LABELS_PATH),
     "holdout": (HOLDOUT_SAMPLE_PATH, HOLDOUT_LABELS_PATH),
     "valid": (VALID_SAMPLE_PATH, VALID_LABELS_PATH),
     "cal": (CAL_SAMPLE_PATH, CAL_LABELS_PATH),
+    "experiment": (EXPERIMENT_SAMPLE_PATH, EXPERIMENT_LABELS_PATH),
 }
 
 

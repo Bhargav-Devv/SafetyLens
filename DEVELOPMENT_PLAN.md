@@ -86,6 +86,12 @@ These experiments cannot change v1.0 behavior until independent evidence support
 
 ### TASK-302b — sentence-transformer retrieval
 
+**Status 2026-10-10:** implementation and protocol frozen; fifth-set labelling and
+one-time comparison remain. The optional path passed an unlabelled live smoke
+test in 124.4 seconds of full application warm-up and 0.855 seconds for the
+first query. It returned only verbatim corpus text. The submission build still
+uses LSA.
+
 **What can be done:** compare a pinned local sentence-transformer with the shipped TF-IDF/LSA
 retriever, including quality, runtime, memory, package size and offline reproducibility.
 
