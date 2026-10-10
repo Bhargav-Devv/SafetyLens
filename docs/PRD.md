@@ -47,8 +47,8 @@ specialist training, without ever fabricating a regulatory requirement.
 2. **Regulation retrieval** — the applicable 29 CFR 1910 section, quoted verbatim with its citation
 3. **Similar incident search** — has this happened before, and how did it end
 4. **Abstention** — refuse to answer when the evidence does not support one
-5. **Conversational layer (the SafetyLens assistant)** — tool contract, prompt, decision flow and tests built
-   (Phase 1). The hosted watsonx agent is not; see `agent_logic.md` for the exact boundary.
+5. **Conversational layer (the SafetyLens assistant)** — direct watsonx tool selection with
+   deterministic safety rendering, prompt, guards and tests built; see `agent_logic.md` and ADR-029.
 
 ## MVP — what shipped
 

@@ -3,17 +3,16 @@
 **Current project state.** Update this whenever state changes.
 For permanent decisions see DECISIONS.md — decisions are permanent, state is not.
 
-**Last updated:** 2026-09-20 (Phase 1 complete)
+**Last updated:** 2026-10-08 (v1.1 reconciliation)
 
 ---
 
 ## Current status
 
-**v1 complete. Phase 1 (the agent layer) complete.** Both classifiers trained on the full
-86,204-record corpus, retrieval over 170 cached OSHA sections with a routing requirement and a
-known-gap map, abstention enforced on both halves, a runnable agent, 15 passing refusal tests.
-
-Not built: the hosted agent on IBM watsonx. It needs an account, not code — Phase 1b.
+**v1 is complete. Phase 1 and the direct watsonx assistant path are complete.** Both classifiers
+are trained, authenticated eCFR Parts 1910 and 1926 are cached, abstention is enforced, and the
+model selects tools while deterministic code renders the final safety answer (ADR-029). The full
+suite passed **37/37** on 2026-10-08.
 
 ## Completed
 
@@ -55,7 +54,9 @@ embeddings might help.
 
 ## Current task
 
-**None.** v1 is closed. Next work begins at TASK-100 (Phase 1, the SafetyLens assistant).
+**v1.1 evidence and state reconciliation.** TASK-113, TASK-307 and TASK-309 have execution
+evidence and are closed. IBM Bob screenshots remain manual submission evidence. Retrieval research
+continues only with new untouched evaluation data; see `DEVELOPMENT_PLAN.md`.
 
 ## Known issues
 
@@ -70,24 +71,17 @@ embeddings might help.
 3. **`Nonclassifiable` recall is 0.22.** Only 157 test examples and the class is a junk drawer by
    construction. Not worth fixing; worth reporting.
 
-4. **The hosted watsonx agent is not built.** Everything it needs is (ADR-013). Phase 1b — needs an account, not code.
-
-5. **No test suite yet.** `tests/` exists and is empty. RULES.md §10 specifies what it must contain.
+4. **Industry context is not routed between Parts 1910 and 1926.** A general-industry conveyor
+   narrative can list the construction analogue as a related result. Exact lookup and provenance
+   are correct; applicability remains a product limitation.
 
 ## Next step
 
 Retrieval on the third (unseen) set: **recall@3 0.600**, recall@1 0.400, MRR 0.483, after latent
 semantic retrieval (ADR-018). **All three evaluation sets are now spent.**
 
-Next is **TASK-307** — run `python main.py review`, 15 of the 50, as second labeller. It takes about
-fifteen minutes and it is the only thing standing between "0.364 against an AI-labelled set" and
-"0.364, agreement with a second reviewer X%". Everything else in Phase 3 is improvement work;
-this is the one that shores up the number already reported.
-
-Then TASK-308 (index scope text — 1910.22 and 1910.212 are invisible to title routing) and TASK-310
-(a second held-out 50, before any improvement is claimed).
-
-Phase 1b (wiring the hosted agent) needs an IBM account, not code.
+Next is the v1.1 submission checkpoint, followed by TASK-302b/TASK-316/TASK-317 only after their
+evaluation allocation is frozen. All four existing retrieval evaluation sets are spent.
 
 ## Verification log
 
@@ -110,8 +104,10 @@ Phase 1b (wiring the hosted agent) needs an IBM account, not code.
 | 2026-09-20 | TASK-300 — 50 labelled, protocol frozen first | 33 scorable · 10 none-exists · 2 out-of-scope (Part 1926) · 5 uncertain |
 | 2026-09-20 | **TASK-301 — retrieval baseline** | **recall@3 0.364** (0.212 always-1910.212, 0.000 random). Correct silence **1.000** |
 | 2026-09-20 | Per-group retrieval | Transportation **1.000**, Fires **0.000**. Cause: generic titles and procedural standards |
-| 2026-09-20 | Second-labeller review | **NOT RUN.** No agreement figure exists — TASK-307 |
-| 2026-09-20 | TASK-309 cache 29 CFR 1926 | **BLOCKED** — ecfr.gov denied by network policy in both workspaces |
+| 2026-10-08 | TASK-113 live watsonx scenarios | All ten held; guard activated twice; deterministic renderer retained the safe answer |
+| 2026-10-08 | Full suite | **37/37 passing**; two harmless pytest-cache permission warnings |
+| 2026-09-28 | TASK-307 second-labeller review | **15/15 agreement (100%)**, reviewer Bhargav; not professional validation |
+| 2026-09-28 | TASK-309 cache 29 CFR 1926 | **230 authoritative sections**, provenance marker and source SHA-256 recorded |
 | 2026-09-20 | TASK-310 held-out 50 built and labelled | 31 scorable · 13 none-exists · 1 out-of-scope · 5 uncertain. Disjoint verified |
 | 2026-09-20 | TASK-308 scope routing, dev | recall@3 0.364 → **0.424**, returned-nothing 0.333 → 0.212 |
 | 2026-09-20 | **TASK-308 scope routing, HELD-OUT** | recall@3 **0.484 → 0.484 — unchanged.** The dev gain was noise |

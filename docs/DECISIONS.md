@@ -930,3 +930,30 @@ the claim matches the artefact.
 This is the same failure mode as ADR-001, one level up. ADR-001 forbids inventing regulation *text*.
 This forbids inventing a *technology label*. Both are claims that outran the artefact.
 
+---
+
+## ADR-029 — The model selects tools; deterministic code renders safety answers
+
+**Decision, 2026-10-08.** A watsonx model may decide which SafetyLens tool to call, but its
+free-form final response is not displayed. `src/assistant_llm.py` sends the original user text to
+the deterministic agent for the final user-visible answer after the model's tool loop and guard
+complete.
+
+**Why.** The first live-model trial produced plausible regulatory prose that paraphrased and
+extended the cached standard. The original guard could catch unknown section numbers and long
+fabricated quotations, but it could not prove that every natural-language requirement was supported
+by the corpus. Detecting every paraphrase is an open-ended language-understanding problem. Rendering
+from validated tool results makes the guarantee structural instead.
+
+**What remains useful about the model.** It still exercises live tool selection, conversation and
+the hostile-output guard. The deterministic renderer then preserves abstention, exact corpus text,
+known-gap handling and compliance refusals independently of model wording.
+
+**Evidence.** The scripted adversarial suite passes, and the ten live scenarios in
+`docs/assistant_live_results.md` were run against `ibm/granite-4-h-small` on 2026-10-08. All required
+behaviors held. The guard activated for an unsupported section and again under “best guess”
+pressure, showing that prompt compliance alone is insufficient.
+
+**Limit.** The run validates those scenarios and that configured model. It is not a statistical
+evaluation of all model behavior. The code-enforced renderer, rather than the sample, is the safety
+claim.

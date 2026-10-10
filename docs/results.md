@@ -372,8 +372,9 @@ spent, so both are logged and deliberately unfixed.
 **It is 0.364 against an AI-labelled reference set of 33 incidents.** Not "retrieval accuracy".
 
 - The labels were assigned by an AI assistant reading the regulation text, not by a certified safety
-  professional. `python main.py review` exists so a second labeller can put an agreement figure on
-  them; until it is run, that figure is missing and its absence is stated rather than glossed.
+  professional. A second reviewer completed 15 cases with **15/15 agreement (100%)**. The reviewer
+  is not a practising safety professional, so this strengthens provenance without constituting
+  professional validation.
 - 33 scorable cases. A single case moves the number by 3 points.
 - The sample over-weights small hazard groups on purpose, so the aggregate is a mean over the sample,
   not an estimate of corpus-wide accuracy.

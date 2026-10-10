@@ -56,8 +56,8 @@ read the docs → pick a task ID from TASKS.md → plan → implement → test �
 
 ## What is outstanding
 
-`HANDOFF.md` is the single list. Everything on it needs an account, a browser download, a signature
-or Bhargav's judgement — nothing on it is blocked on code.
+`DEVELOPMENT_PLAN.md` is the current versioned implementation order. `HANDOFF.md` preserves the
+manual handoff history and the remaining external-input tasks.
 
 ## Training needs more than 2.9 GB
 
@@ -123,7 +123,8 @@ went, in either direction.
 Two known fixes are deliberately **left unfixed** for the same reason — a public-road known gap and
 an over-coarse Exposure keyword list, both found on held-out. See ADR-017. Do not "just fix" them.
 
-Not built: the hosted agent on IBM watsonx. Needs an account, not code (Phase 1b).
+The direct watsonx assistant path is built and live-tested. The model selects tools; deterministic
+code renders safety answers (ADR-029). The optional Orchestrate/OpenAPI route remains undeployed.
 
 ## NEVER write a test fixture into `data/` — ADR-025
 

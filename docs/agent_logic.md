@@ -1,6 +1,6 @@
 # SafetyLens assistant — agent logic specification
 
-**Status: BUILT, as of 2026-09-20. See the boundary below.**
+**Status: BUILT AND LIVE-TESTED, as of 2026-10-08. See the boundary below.**
 
 | Piece | Where | State |
 |---|---|---|
@@ -9,21 +9,20 @@
 | Tool contract + JSON schemas | `src/assistant_tools.py` | built |
 | System prompt | `docs/assistant_system_prompt.md` | built |
 | Decision flow, deterministic | `src/agent.py` | built - run `python main.py bob` |
-| Refusal rules as tests | `tests/test_refusals.py` | built - 15 passing |
+| Refusal rules as tests | `tests/test_refusals.py` | built |
 | Captured transcript | `docs/assistant_transcript.md` | generated, not hand-written |
 | HTTP service | `serve.py` | built, smoke-tested |
 | OpenAPI 3 spec | `openapi.json` | built - `python serve.py --spec` |
-| **watsonx.ai agent + guard** | `src/assistant_llm.py` | **built**, 10 tests vs an adversarial model |
-| Live run against a real model | - | **needs `.env`** — credentials only Bhargav has |
+| **watsonx.ai tool selection + guard** | `src/assistant_llm.py` | **built**, adversarially tested |
+| Deterministic final rendering | `src/agent.py` via `src/assistant_llm.py` | **built**, ADR-029 |
+| Live run against a real model | `docs/assistant_live_results.md` | **complete**, ten scenarios |
 
-The one unbuilt piece is the language model itself. Everything it needs exists and is tested; what
-has not happened is importing the schemas into watsonx Orchestrate and pasting in the prompt, which
-requires an account this project does not have.
+The direct watsonx path is the implemented hosted-model route. The optional Orchestrate/OpenAPI
+deployment has not been performed and is not required by the direct client architecture (ADR-026).
 
-`src/agent.py` implements the same decision flow with the language model removed. That costs
-conversational fluency and buys two things: every refusal rule becomes an assertion that runs in
-seconds rather than a behaviour that can only be spot-checked, and the system runs without
-credentials. See ADR-013.
+`src/agent.py` implements the decision flow and renders the final answer. This costs conversational
+fluency and buys two things: every refusal rule is an assertion, and regulation claims do not depend
+on model wording. The system also runs without credentials. See ADR-013 and ADR-029.
 
 Stating the boundary precisely is deliberate. "the assistant is built" and "the assistant is specified" are both wrong;
 the table is what is true.

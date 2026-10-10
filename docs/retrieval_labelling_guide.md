@@ -122,7 +122,7 @@ disagreements, add them to §8 as decided rules, bump the version, and relabel.
 | Fall from a ladder | 1910.23 Ladders is `primary`; 1910.28 is `acceptable`. |
 | Fall from a roof, platform or edge | 1910.28 is `primary`; 1910.29 and 1910.140 are `acceptable`. |
 | Struck by a falling object | 1910.28 (falling object protection) unless a specific lifting section applies. |
-| Construction work — roofing, formwork, highway work zones, excavation | `out_of_scope`. 1910.12 assigns it to Part 1926, which is not cached. |
+| Construction work — roofing, formwork, highway work zones, excavation | `out_of_scope` for these frozen evaluation sets. At labelling time Part 1926 was not cached; the historical verdict is not relabelled after TASK-309. |
 | Agricultural operations, livestock | `out_of_scope` (Part 1928) or `none_exists` for animal contact. |
 | Vehicle incident on a public road | `none_exists` — 29 CFR 1910 does not govern public highways. |
 | Hydraulic or pneumatic press | **1910.212**, not 1910.217 — 1910.217(a)(5) excludes hydraulic and pneumatic presses from the mechanical power press standard. |

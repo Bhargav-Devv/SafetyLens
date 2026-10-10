@@ -88,10 +88,13 @@ Installed today. The conversational layer was renamed off "Bob" so nothing false
 
 - [x] Install IBM Bob (`IBM-BobUserSetup-x64-1.126.0+bob2.1.0.exe`)
 - [x] Rename the assistant so it no longer impersonates the product; `docs/ibm_bob_usage.md` written
-- [ ] Open the repo in Bob, use it, capture the four screenshots in `docs/ibm_bob_usage.md`
-- [ ] Run Bob's Semgrep scan on `serve.py`; record that it flags the documented missing auth
+- [x] Open the repository in Bob and use it for inspection/testing
+- [ ] Capture the four submission screenshots listed in `docs/ibm_bob_usage.md`
+- [x] Run Bob's Semgrep scan on `serve.py`: **0 automated findings**. Manual review confirmed the
+      documented missing authentication; the distinction is recorded rather than claiming Semgrep
+      detected it
 
-## Phase 1b — wire the hosted agent  ⬜ BLOCKED on an IBM account
+## Phase 1b — wire the hosted agent  ✅ COMPLETE 2026-10-08
 
 No code. The artefacts exist and are tested.
 
@@ -103,10 +106,10 @@ No code. The artefacts exist and are tested.
       Orchestrate path remains available via `serve.py` + `openapi.json` for anyone who wants it
 - [x] TASK-112 The prompt is loaded **from** `docs/assistant_system_prompt.md` at runtime, so there is one
       copy rather than two that drift. A test asserts it parses and carries the rules
-- [~] TASK-113 **Half done.** `tests/test_assistant_llm.py` runs the full loop against a scripted model
-      that breaks every rule on purpose — 10 tests, all passing, no credentials needed. What remains
-      is running `docs/assistant_test_scenarios.md` against a **live** model, which needs `.env` filled in.
-      The scripted model proves the guard works; only a real one shows how often it is needed
+- [x] TASK-113 Scripted guard tests and the ten manual live-model scenarios completed. The live
+      `ibm/granite-4-h-small` run held every required refusal; the guard activated twice. Results are
+      recorded in `docs/assistant_live_results.md`. Final safety answers are rendered by the
+      deterministic agent (ADR-029), so free-form regulatory prose is never displayed
 
 **TASK-113 is the interesting one.** `src/agent.py` cannot breach a refusal rule because it has no
 capacity to improvise. A language model can. The comparison is the finding.
@@ -149,14 +152,15 @@ The weakest half of the system, and the improvement is measurable.
       independently of the retriever. `docs/retrieval_labelling_guide.md`
 - [x] TASK-301 TF-IDF baseline established: **recall@3 = 0.364** (0.212 always-1910.212, 0.000
       random). Correct silence 1.000. `python main.py evaluate-retrieval`
-- [ ] TASK-307 **Run `python main.py review`** — 15 of the 50, second labeller. Without it the
-      retrieval figure has no agreement number and the provenance stays a weakness
+- [x] TASK-307 Second-labeller review completed and saved in
+      `data/retrieval_eval_review.json`: **15/15 agreement (100%)**. The reviewer is not a practising
+      safety professional, so professional validation remains in the backlog
 - [x] TASK-308 Scope routing + title-leads ranking (ADR-016). **Recall unchanged on held-out — the
       dev gain was noise.** Coverage improved: returned-nothing 0.194 → 0.065 held-out, and that
       replicates on dev. Kept for the coverage, not the recall
-- [ ] TASK-309 Cache 29 CFR 1926. **The code is done and tested** — `python main.py add-part 1926
-      <file>` parses, validates and merges it. Only the download is blocked: ecfr.gov is denied by
-      network policy in both workspaces, so the XML needs fetching in a browser. See `HANDOFF.md`
+- [x] TASK-309 Authoritative eCFR Part 1926 XML imported with provenance: **230 sections**, source
+      SHA-256 recorded in `data/standards_part_1926.json`. Mixed-corpus integrity tests pass. Industry
+      applicability routing remains an explicit limitation for later retrieval work
 - [x] TASK-310 Held-out 50 built and labelled, disjoint from dev, scored once. **It paid for itself
       immediately** by killing a 6-point recall gain that was not real
 - [x] TASK-311 **Closed: not implementable** (ADR-023). All 28 public-roadway OIICS events fall

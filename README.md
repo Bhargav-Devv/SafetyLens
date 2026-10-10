@@ -135,10 +135,10 @@ Full transcript, generated rather than written: `docs/assistant_transcript.md`.
 | Decision flow, deterministic (`src/agent.py`) | built, tested |
 | HTTP service + OpenAPI 3 spec (`serve.py`) | built, smoke-tested |
 | Streamlit interface (`app.py`) | built, 5 state tests |
-| **Hosted agent on IBM watsonx** | **not built - needs an account, not code** |
+| Direct watsonx assistant (`src/assistant_llm.py`) | built; live scenarios run; deterministic safety rendering |
 
-Everything the hosted agent needs exists: `openapi.json` to import, `docs/assistant_system_prompt.md` to
-paste. `python serve.py --spec` prints the five wiring steps.
+The older Orchestrate route remains available through `openapi.json`, but the direct watsonx client
+is the implemented path. `python serve.py --spec` documents the optional HTTP integration.
 
 `src/agent.py` is the decision flow with the language model removed. That costs conversational
 fluency and buys two things: every refusal rule becomes a test that runs in seconds, and the system
@@ -161,7 +161,8 @@ runs without credentials. See `docs/DECISIONS.md` ADR-013.
 | `docs/retrieval_labelling_guide.md` | How the retrieval ground truth was built, frozen before labelling |
 | **`HANDOFF.md`** | **Everything still outstanding, and what each item needs** |
 | `docs/findings_indian_data.md` | Why the port to India is blocked by disclosure, not by method |
-| `docs/assistant_test_scenarios.md` | 10 scenarios to run against the hosted agent |
+| `docs/assistant_test_scenarios.md` | 10 live scenarios and their completion link |
+| `docs/assistant_live_results.md` | Observed live watsonx results and guard findings |
 | `docs/rti_application_draft.md` | RTI request for Form 18 narratives, ready to file |
 | `docs/DECISIONS.md` ADR-016/017 | Why the dev gain was discarded, and what was left deliberately unfixed |
 | `docs/results.md` | Every number, with the failure analysis |

@@ -87,8 +87,9 @@ burying:
 assistant reading the regulation text - not by a certified safety professional. The protocol was
 frozen first and labels were assigned without seeing retriever output
 (`docs/retrieval_labelling_guide.md`), which removes circularity but not the provenance problem.
-`python main.py review` produces a second-labeller agreement figure; **it has not been run, so no
-agreement figure exists yet.**
+`python main.py review` was completed by Bhargav on 15 cases: **15/15 agreement (100%)**. This is a
+second human review of AI-assigned labels, but the reviewer is not a practising safety professional.
+It improves provenance; it does not replace professional validation.
 
 **A self-consistency check was attempted and is reported as invalid.** On 2026-09-21 the first
 fifteen dev incidents were re-labelled from the narratives alone and compared with the originals:
@@ -99,7 +100,8 @@ reliability of the procedure that produced it. A self-agreement figure from one 
 evidence, and a *perfect* one is a warning that the experiment had no power rather than a sign that
 the labels are good.
 
-The check that would mean something needs a genuinely independent labeller. That is still TASK-307.
+The invalid self-consistency check remains documented separately from TASK-307. TASK-307 was later
+completed by Bhargav; validation by a practising safety professional remains in the backlog.
 
 **One improvement has already been caught this way.** Scope routing (ADR-016) raised dev recall@3
 from 0.364 to 0.424 - a clean 6-point gain. On the held-out set recall was **identical before and
@@ -119,8 +121,8 @@ the corpus — including the strongest test in the suite, which verifies that ea
 substring of the cached text. It was.
 
 Fixed by requiring a provenance block on every cached Part, refusing any cache without one, and
-moving the test out of `data/` entirely. Three regression tests now cover it, including one asserting
-no section in the live index lies outside Part 1910. See ADR-025.
+moving the test out of `data/` entirely. Regression tests now require provenance and assert that
+every live section belongs to an explicitly configured Part. See ADR-025.
 
 **Stated here rather than quietly patched** because it is the most serious thing that has gone wrong
 in this project, and because the lesson is general: an integrity check that compares an output to a
@@ -141,13 +143,14 @@ Reported ranking scores are likewise no longer interpretable as match quality. T
 rather than score, and `lexical_score` is carried alongside so a calibrated number still reaches any
 caller. Recalibrating the floor needs a fourth labelled set - TASK-313.
 
-## 2b. The corpus is general industry only
+## 2b. Parts 1910 and 1926 are cached, but industry applicability is not inferred
 
-29 CFR **1926** (construction) and **1928** (agriculture) are not cached. Two of the 50 sampled
-incidents - a residential roof tear-off and a highway-work-zone flagger - are governed by real
-standards the system has never been given, and the OSHA severe-injury dataset contains a great deal
-of construction work. They are scored as `out_of_scope` rather than as retrieval failures, because
-the failure is corpus coverage, not ranking.
+The authenticated corpus now contains general-industry Part **1910** and construction Part
+**1926**. Agriculture Part **1928** is still absent. Adding Part 1926 fixed corpus coverage, but the
+retriever does not establish whether an employer or activity falls under construction. A conveyor
+narrative with no construction context can therefore list 1926.307 as a related result beneath
+1910.219. Until industry routing is designed and independently evaluated, related cross-Part results
+must be read as candidates, not applicability determinations.
 
 ## 3. The worst classes reflect the coding scheme
 
@@ -185,17 +188,14 @@ signal - are absent entirely.
 The output tells a human where to look. It is not a compliance determination, not a legal opinion,
 and not a substitute for a safety professional.
 
-## 8. The agent runs; the hosted model does not
+## 8. The model does not author the final safety answer
 
-Built and tested: the tool contract with schemas, the system prompt, a deterministic implementation
-of the decision flow (`python main.py bob`), and fifteen tests asserting the refusal rules.
-
-Not built: the assistant itself - a language model on IBM watsonx given those schemas and that prompt. No code
-change is needed for it; it needs an account.
-
-`src/agent.py` routes on regular expressions, not language understanding. It will mishandle phrasings
-a language model would read easily. It is the reference the hosted agent gets checked against, and
-the reason the refusal rules are assertions rather than hopes. See ADR-013.
+The direct watsonx path is built and was run against the ten manual scenarios. The model selects
+tools, while `src/agent.py` renders the final answer from validated results. This deliberately limits
+conversational freedom: the first live design allowed plausible unsupported regulatory prose through
+the narrow guard. ADR-029 makes the stronger guarantee structural. The system still depends on
+regular-expression intent routing in the deterministic renderer and may mishandle unfamiliar
+phrasings; scripted adversarial tests and the live sample do not cover every possible utterance.
 
 ## 9. Not co-designed with workers
 

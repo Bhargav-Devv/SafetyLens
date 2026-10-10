@@ -1,65 +1,33 @@
 # Handoff — what needs you
 
-Everything in this repository that can be done without you is done. What remains needs an account, a
-browser download, a signature, or fifteen minutes of your judgement. Ordered by value.
+This file preserves the manual handoff history. TASK-113, TASK-307 and TASK-309 below were completed
+after the original handoff was written. Current implementation order is in `DEVELOPMENT_PLAN.md`.
 
-Current state: **57 of 69 tasks**, `tests/test_refusals.py` 19/19, `tests/test_ui.py` 5/5.
-
----
-
-## 1. Run the review — 15 minutes, highest value on the board  ·  TASK-307
-
-```bash
-python main.py review
-```
-
-It shows you 15 of the 50 dev incidents, one at a time: the narrative, the section I chose, and my
-one-line reason. You press `y` or `n`. Progress saves after every answer, so you can quit and resume.
-
-**Why this matters more than anything else left.** I labelled 200 incidents across four evaluation
-sets, and every retrieval number in `docs/results.md` rests on those labels. I am not a safety
-professional. Right now the figure has to be written *"recall@3 0.600 against an AI-labelled set"*.
-After you run this it becomes *"…agreement with a second reviewer, X%"* — and if you disagree with me
-a lot, that is itself the finding, and the guide gets amended and the set relabelled.
-
-If your agreement comes out below 70%, that means the **guide** is ambiguous, not that you are wrong.
-The tool says so when it happens.
-
-**I tried to substitute for this and could not.** On 21 September I re-labelled the first fifteen dev
-incidents from the narratives alone and got 15 out of 15 identical to my originals. That figure is
-worthless — same labeller, same session, hours apart; it measures whether I remember what I decided,
-not whether the procedure is reliable. It is recorded in `docs/limitations.md` as an invalid check
-precisely so nobody reads it as validation. **Only a different person can do this one.**
+Current verified state, 2026-10-08: full suite **37/37 passing**; direct watsonx live scenarios
+completed; second review completed; authoritative Part 1926 corpus imported.
 
 ---
 
-## 2. Wire up the SafetyLens assistant  ·  TASK-111, 112, 113
+## 1. Review — completed  ·  TASK-307
 
-Everything it needs is built and tested. Three steps:
+Completed by Bhargav: **15/15 agreement (100%)**, saved in
+`data/retrieval_eval_review.json`. This is not validation by a practising safety professional.
 
-```bash
-python serve.py --spec        # writes openapi.json and prints these steps
-```
+The earlier same-labeller self-consistency attempt remains documented as invalid. The later Bhargav
+review is the TASK-307 result; professional validation remains open.
 
-1. Run `python serve.py` somewhere reachable over **HTTPS** (ngrok, Render, Railway, an IBM Code
-   Engine deployment — anything with a public URL).
-2. Edit `servers[0].url` in `openapi.json` to that address. Orchestrate calls whatever is in that
-   field.
-3. watsonx Orchestrate → Skills → Add → **Import OpenAPI**, upload `openapi.json`. You get three
-   tools: `analyse_incident`, `explain_standard`, `find_similar`.
-4. Paste `docs/assistant_system_prompt.md` — the block inside the fenced `text` section, verbatim — into
-   the agent's instructions.
+---
 
-**Then do TASK-113, which is the interesting part.** Work through the scenarios in
-`docs/assistant_test_scenarios.md` by hand against the hosted agent and record where it differs from
-`src/agent.py`. The deterministic agent *cannot* break a refusal rule, because it has no capacity to
-improvise. A language model can. **The comparison is the finding**, not a formality.
+## 2. SafetyLens assistant — completed  ·  TASK-111, 112, 113
+
+The direct watsonx path superseded the Orchestrate deployment. Ten live scenarios were completed on
+2026-10-08; see `docs/assistant_live_results.md` and ADR-029.
 
 ⚠ `serve.py` has no authentication. Put a gateway in front of it or keep the URL private.
 
 ---
 
-## 3. Two browser downloads — the code is already waiting
+## 3. Remaining browser download
 
 I re-tested every route before writing this: `ecfr.gov`, `govinfo.gov`, `asrs.arc.nasa.gov`,
 `dgfasli.gov.in` and `huggingface.co` are **all denied by network policy in both the cloud workspace
@@ -67,24 +35,23 @@ and the one on your laptop**, and no Chrome is connected for browser automation.
 not use the web-fetch tool to reconstruct the corpus: that routes authoritative regulation text
 through a summarising model, which is the one thing ADR-001 forbids outright.
 
-Both are blocked here by network policy, not by anything missing in the project.
+The remaining DGFASLI source is blocked here by network policy, not by missing parser code.
 
-### 29 CFR 1926 — construction  ·  TASK-309
+### 29 CFR 1926 — construction — completed  ·  TASK-309
 
 ```
 https://www.ecfr.gov/api/versioner/v1/full/2026-01-01/title-29.xml?part=1926
 ```
 
-Save it, then:
+The authoritative XML was downloaded and imported. The provenance cache records 230 sections and
+the source SHA-256. The historical command was:
 
 ```bash
 python main.py add-part 1926 path/to/the-file.xml
 ```
 
-Parsed, validated and merged into the index. Tested against eCFR-shaped XML, including the guard that
-it will not cache an empty corpus. **Why it matters:** the OSHA dataset is full of construction work,
-and two incidents in the evaluation sets currently score `out_of_scope` because the governing
-standard lives in a Part this build has never had.
+It was parsed, validated and merged into the index. The older evaluation labels remain historical;
+their `out_of_scope` verdicts describe the corpus that existed when those sets were frozen.
 
 ### DGFASLI Model Factories Rules  ·  TASK-212
 

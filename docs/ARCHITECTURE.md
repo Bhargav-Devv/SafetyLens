@@ -15,10 +15,11 @@
 | Regulations | eCFR public API → cached JSON | Authoritative source, verbatim text |
 | Persistence | joblib for models, JSON for corpus and metrics | Zero setup |
 | Interface | CLI (`main.py`) | The output is a report, not a page |
-| Conversational layer | Tools, prompt, decision flow and tests **built**; hosted watsonx agent **not** | See `agent_logic.md` |
+| Conversational layer | Direct watsonx tool selection; deterministic safety rendering and guards | See ADR-026/029 |
 
-**Explicitly not used:** no database server, no web framework, no Docker, no cloud hosting, no
-authentication. Each would consume time that belongs to the model. See DECISIONS.md ADR-003.
+**Explicitly not used:** no database server, Docker or cloud hosting. FastAPI supplies the optional
+tool HTTP boundary and Streamlit supplies the local UI. The demonstration HTTP service has no
+authentication and must not be exposed without a gateway. See ADR-003 and `serve.py`.
 
 ## High-level flow
 

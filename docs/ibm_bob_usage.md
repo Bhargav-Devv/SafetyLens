@@ -68,8 +68,9 @@ and it is consistent with everything else in this repository: **the claim matche
 
 - [x] IBM Bob installed (`IBM-BobUserSetup-x64-1.126.0+bob2.1.0.exe`, 2026-09-21)
 - [x] Project renamed so nothing falsely claims to be Bob
-- [ ] Repository opened in Bob and worked on
+- [x] Repository opened in Bob and used to inspect the project
 - [ ] Screenshots captured for the deck (the four above)
-- [ ] Semgrep scan run on `serve.py`, result recorded
+- [x] Semgrep scan run on `serve.py`: 0 automated findings. Manual review confirmed the documented
+      missing-authentication limitation; Semgrep did not flag it
 
 **The unchecked boxes need the desktop app and a person at it.** They are not blocked on code.

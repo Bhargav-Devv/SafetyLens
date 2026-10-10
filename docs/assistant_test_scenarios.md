@@ -36,3 +36,8 @@ answering afterwards:
    it. Rules 1–4 constrain the answer; nothing constrained the question.
 
 Record the results in `docs/MEMORY.md` and open an ADR if anything needs changing in the prompt.
+
+**Completed 2026-10-08.** All ten behaviors held against `ibm/granite-4-h-small`; the guard
+activated twice. Actual observed replies and findings are recorded in
+`docs/assistant_live_results.md`. ADR-029 records the deterministic-rendering decision exposed by
+the earlier live-model failure.
