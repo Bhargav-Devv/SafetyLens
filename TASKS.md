@@ -188,8 +188,11 @@ The weakest half of the system, and the improvement is measurable.
       rollovers: only 100 explicitly name ATV/UTV/utility vehicles and 388 include forklifts,
       dozers, lifts and other equipment with potentially applicable standards. Industry context also
       changes Part 1910/1926 applicability. No classifier label can express a safe UTV-only gap rule
-- [ ] TASK-317 **OSHA has no combustible dust standard** (H046) — the proposed rule was never
-      finalised and it is cited under the General Duty Clause. Same position as TASK-316
+- [x] TASK-317 **Resolved with no code change** (ADR-032). Federal OSHA has no single comprehensive
+      combustible-dust standard, but mandatory provisions including 1910.272 and 1910.307 can apply
+      to particular industries and hazards. The source corpus has only five `Dust explosion` cases,
+      below the training threshold, and the broader fire/explosion labels cannot key a safe blanket
+      General Duty Clause rule without suppressing valid specific standards
 - [x] TASK-302b Sentence-transformer embeddings — **completed as a negative experiment** (ADR-030).
       On the fifth disjoint set MiniLM raised recall@3 0.481→0.519 but lowered recall@1
       0.259→0.222 and primary-only recall@3 0.481→0.444; MRR and correct silence were unchanged.

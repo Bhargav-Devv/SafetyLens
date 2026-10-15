@@ -90,10 +90,10 @@ to say the labels are mine.
 | | Why |
 |---|---|
 | **TASK-316** — UTV gap candidate | Resolved without code (ADR-031): the emitted rollover label is much broader than UTVs and cannot safely key a known gap |
-| **TASK-317** — combustible dust candidate | Still open. Any behavior change needs new untouched evidence because all five sets are spent |
+| **TASK-317** — combustible dust candidate | Resolved without code (ADR-032): specific OSHA standards can apply and the narrow dust label is not emitted reliably, so a blanket gap rule would create false silence |
 | **Multi-label events** | Measured first: only **6.5%** of incidents have a top-two group margin below 1.0, median 2.458, and the worst 1.3% are already abstained on. Real but narrow. `docs/results.md` |
 | **TASK-302b** — sentence embeddings | Completed as a negative experiment (ADR-030). MiniLM gained one top-three hit but weakened lead and primary-only recall, tripled warm-up, and was not adopted |
-| **Further retrieval changes** | All five sets are spent. TASK-316 and TASK-317 need new untouched evidence |
+| **Further retrieval changes** | All five sets are spent. Any future behavior change needs new untouched evidence |
 
 ---
 

@@ -718,8 +718,9 @@ claim this change earns is the verified correctness property above, not a recall
 The two new silence failures are the same category of finding as ADR-017:
 
 - **H027** — a utility task vehicle rollover. No 1910 section covers UTVs.
-- **H046** — a sulphur dust explosion. **OSHA has no combustible dust standard**; it is cited under
-  the General Duty Clause, and the long-proposed rule was never finalised.
+- **H046** — a sulphur dust explosion. The initial candidate treated it as a General Duty Clause
+  gap because no single comprehensive combustible-dust standard exists; ADR-032 later corrected
+  that framing after checking the specific mandatory provisions that can apply.
 
 Both are real. Both were found **on evaluation sets that are spent**, so fixing them against those
 sets is precisely the mistake ADR-017 exists to prevent. Logged as TASK-316 and TASK-317.
@@ -1005,3 +1006,26 @@ industry applicability.
 **Consequence.** H027 remains a documented ambiguity. The system may return no good match rather
 than asserting that no standard exists. No retrieval behavior changed, so no new metric was claimed
 and no fresh evaluation set was consumed.
+
+---
+
+## ADR-032 — Do not add a blanket combustible-dust known gap
+
+**Decision, 2026-10-15.** Close TASK-317 without changing the known-gap map.
+
+**Evidence.** Federal OSHA has no single comprehensive combustible-dust standard, but its official
+combustible-dust materials identify mandatory standards that apply in particular circumstances.
+Examples include 1910.272 for grain handling and 1910.307 for hazardous classified electrical
+locations. OSHA states that the General Duty Clause is used where no OSHA standard applies.
+
+The source corpus contains only five `Dust explosion` narratives, below
+`MIN_EXAMPLES_PER_CLASS=150`; the classifier therefore cannot emit that narrow label. H046's
+`Explosion, n.e.c.` label has 144 examples and is also below the threshold. Broader fire/explosion
+labels include cases governed by specific standards.
+
+**Reason.** A broad label-keyed General Duty Clause rule would suppress valid specific standards.
+A keyword exception would be an untrained hidden classifier and still could not establish the
+industry, material and ignition-source context needed for applicability.
+
+**Consequence.** H046 remains a documented ambiguity. No candidate behavior change was produced,
+so no fresh evaluation set was consumed and no metric was claimed.

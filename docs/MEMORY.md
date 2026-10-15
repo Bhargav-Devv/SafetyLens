@@ -55,8 +55,8 @@ embeddings might help.
 ## Current task
 
 TASK-302b is complete as a negative experiment (ADR-030); the optional MiniLM path remains disabled.
-IBM Bob screenshots remain manual submission evidence. TASK-316 and TASK-317 require new untouched
-evidence because all five retrieval sets are now spent.
+TASK-316 and TASK-317 are resolved without behavior changes (ADR-031/032). IBM Bob screenshots
+remain manual submission evidence.
 
 ## Known issues
 
@@ -80,9 +80,9 @@ evidence because all five retrieval sets are now spent.
 Retrieval on the third (unseen) set: **recall@3 0.600**, recall@1 0.400, MRR 0.483, after latent
 semantic retrieval (ADR-018). **All three evaluation sets are now spent.**
 
-TASK-316 is resolved without a code change (ADR-031): the available event label is far broader than
-UTVs and cannot safely key a gap. Next retrieval work is TASK-317, which needs untouched evidence if
-it produces a candidate behavior change. All five existing retrieval evaluation sets are spent.
+TASK-316 and TASK-317 are resolved without code changes (ADR-031/032): neither narrow condition can
+be expressed safely by an emitted classifier label. All five existing retrieval evaluation sets
+remain spent; neither audit consumed another set because neither produced a behavior candidate.
 
 ## Verification log
 
@@ -157,6 +157,7 @@ it produces a candidate behavior change. All five existing retrieval evaluation 
 | 2026-10-15 | TASK-302b fifth set | 50 cases: 27 section · 14 none-exists · 8 uncertain · 1 out-of-scope; disjoint from four earlier sets |
 | 2026-10-15 | TASK-302b LSA vs MiniLM | recall@1 0.259→0.222; recall@3 0.481→0.519; MRR 0.358→0.358; silence 0.857→0.857. MiniLM not adopted (ADR-030) |
 | 2026-10-15 | TASK-316 UTV gap audit | 100 of 488 rollover-label cases name ATV/UTV/utility vehicles; label is too broad for a safe known-gap rule. No code change (ADR-031) |
+| 2026-10-15 | TASK-317 combustible-dust audit | Only 5 `Dust explosion` cases; specific OSHA provisions can apply, so no broad General Duty Clause rule was added (ADR-032) |
 
 ## Environment notes
 

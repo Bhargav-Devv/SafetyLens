@@ -129,6 +129,11 @@ section, or whether Part 1926 and industry context change the answer.
 
 ### TASK-317 — combustible-dust gap
 
+**Resolved 2026-10-15 with no behavior change (ADR-032).** OSHA has no single comprehensive
+combustible-dust standard, but specific mandatory provisions apply in defined circumstances. The
+corpus contains only five `Dust explosion` narratives, so the classifier cannot emit that label,
+and broader fire/explosion labels would suppress valid standards if used as a known-gap key.
+
 **What can be done:** determine when combustible-dust incidents should name the General Duty Clause
 while preserving specific standards that genuinely apply.
 
@@ -139,6 +144,9 @@ while preserving specific standards that genuinely apply.
 3. Freeze the handling rule and regression cases before evaluation.
 4. Use untouched data reserved for TASK-317, not a set already consumed by TASK-302b or TASK-316.
 5. Report corrected silence and any valid retrievals lost.
+
+The audit stopped before steps 3–5 because no sound handling rule could be expressed with the
+existing classifier output. No evaluation set was consumed and no metric was claimed.
 
 ### Evaluation allocation before implementation
 

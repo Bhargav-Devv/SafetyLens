@@ -364,8 +364,8 @@ improvement — it is a verified correctness property**: every public-road incid
 General Duty Clause instead of a warehouse forklift standard, and every control is unchanged.
 
 Two further known-gap candidates surfaced in the process — a utility task vehicle rollover, and a
-sulphur dust explosion (**OSHA has no combustible dust standard**). Both were found on sets that are
-spent, so both are logged and deliberately unfixed.
+sulphur dust explosion. Both were found on spent sets and were logged without tuning against them;
+later corpus and scope audits rejected both blanket gap rules (ADR-031/032).
 
 ### What this number is not
 
@@ -432,6 +432,20 @@ enforcement and facilities management. Part 1926 coverage depends on constructio
 defined equipment categories. Applying a no-standard rule to the broad event label would suppress
 valid standards. TASK-316 therefore closes as a negative design result with no behavior change and
 no metric claim.
+
+### TASK-317 — why a combustible-dust gap rule was not added
+
+H046 suggested treating combustible-dust explosions as a General Duty Clause gap. OSHA has no
+single comprehensive combustible-dust standard, but its official guidance identifies mandatory
+provisions that apply in defined circumstances. Examples include 1910.272 for grain handling and
+1910.307 for electrical equipment in hazardous classified locations; the General Duty Clause is
+used only where no applicable standard addresses the recognized hazard.
+
+The classifier cannot express that distinction. The source corpus contains only five narratives
+labelled `Dust explosion`, below the 150-example training threshold, while broader fire/explosion
+labels mix dust incidents with cases governed by specific standards. A label-keyed gap would create
+false silence. TASK-317 therefore closes with no behavior change, no evaluation-set use and no
+metric claim.
 
 ## Abstention
 
