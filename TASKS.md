@@ -196,7 +196,7 @@ The weakest half of the system, and the improvement is measurable.
       losing one discarded (ADR-016) and the winning one shipped (ADR-018)
 - [x] TASK-304 Known-gap map built (ADR-011, ADR-015). Heat, workplace violence and overexertion
       name the General Duty Clause before the index is consulted. Correct silence 0.889–1.000
-- [~] TASK-305 **SUPERSEDED by TASK-313.** The floor no longer operates on the scale it was
+- [x] TASK-305 **CLOSED — superseded by completed TASK-313.** The floor no longer operates on the scale it was
       calibrated for, so re-tuning the old number is the wrong question (ADR-019)
 - [x] TASK-306 `results.md` carries recall@1/@3, MRR, correct silence and baselines across three
       sets, with the provenance of the labels stated every time the figure appears
