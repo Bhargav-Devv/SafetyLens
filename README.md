@@ -67,12 +67,17 @@ project can say about how much weight a small evaluation carries. See `docs/resu
 
 Full per-class breakdown in `docs/results.md`.
 
+The frozen TASK-302b sentence-transformer experiment did not replace LSA. MiniLM raised fifth-set
+recall@3 from 0.481 to 0.519 but lowered recall@1 from 0.259 to 0.222, left MRR unchanged, and more
+than tripled application warm-up. It remains an optional disabled path; see ADR-030.
+
 ## Setup
 
 ```bash
 pip install -r requirements.txt          # core
 pip install -r requirements-serve.txt    # optional: HTTP service
 pip install -r requirements-ui.txt       # optional: Streamlit interface
+pip install -r requirements-embeddings.txt # optional: reproduce TASK-302b
 ```
 
 Put the OSHA CSV (`January2015toSeptember2023.csv`) in `data/raw/`.

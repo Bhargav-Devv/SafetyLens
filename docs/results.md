@@ -397,6 +397,29 @@ that embeddings might help.
 
 It is also why TASK-300 comes first. Without a labelled set, "embeddings are better" is an opinion.
 
+## TASK-302b — sentence-transformer comparison on the fifth set
+
+The optional `all-MiniLM-L6-v2` implementation and guide v1.1 were frozen before the fifth sample
+was drawn. Fifty incidents were disjoint from all four earlier sets and labelled without consulting
+either retriever: 27 `section`, 14 `none_exists`, 8 `uncertain`, and 1 `out_of_scope`. The labels
+were assigned by an AI assistant from the authenticated corpus; they are not professional validation.
+
+| metric | shipped LSA | MiniLM | change |
+|---|---:|---:|---:|
+| recall@1 | **0.259** | 0.222 | -0.037 |
+| recall@3 | 0.481 | **0.519** | +0.037 |
+| primary-only recall@1 | **0.222** | 0.185 | -0.037 |
+| primary-only recall@3 | **0.481** | 0.444 | -0.037 |
+| MRR | 0.358 | 0.358 | 0.000 |
+| returned nothing when a section exists | 0.037 | 0.037 | 0.000 |
+| correct silence | 0.857 | 0.857 | 0.000 |
+| full warm-up | **53.7 s** | 170.3 s | +116.6 s |
+
+MiniLM gained one top-three hit while losing one lead hit and one primary-only top-three hit. MRR
+and safety silence were unchanged. Its optional stack added about 501.7 MB of PyTorch and an 87.3 MB
+model cache. The mixed result does not justify replacing LSA. MiniLM remains optional and disabled.
+The fifth set is now spent and cannot support TASK-316 or TASK-317 changes.
+
 ## Abstention
 
 `LinearSVC` gives decision margins, not probabilities, so confidence is the gap between the top two

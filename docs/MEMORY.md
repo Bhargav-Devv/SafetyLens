@@ -3,7 +3,7 @@
 **Current project state.** Update this whenever state changes.
 For permanent decisions see DECISIONS.md — decisions are permanent, state is not.
 
-**Last updated:** 2026-10-08 (v1.1 reconciliation)
+**Last updated:** 2026-10-15 (TASK-302b completed)
 
 ---
 
@@ -12,7 +12,7 @@ For permanent decisions see DECISIONS.md — decisions are permanent, state is n
 **v1 is complete. Phase 1 and the direct watsonx assistant path are complete.** Both classifiers
 are trained, authenticated eCFR Parts 1910 and 1926 are cached, abstention is enforced, and the
 model selects tools while deterministic code renders the final safety answer (ADR-029). The full
-suite passed **37/37** on 2026-10-08.
+suite passed **40/40** before the TASK-302b measurement.
 
 ## Completed
 
@@ -54,9 +54,9 @@ embeddings might help.
 
 ## Current task
 
-**v1.1 evidence and state reconciliation.** TASK-113, TASK-307 and TASK-309 have execution
-evidence and are closed. IBM Bob screenshots remain manual submission evidence. Retrieval research
-continues only with new untouched evaluation data; see `DEVELOPMENT_PLAN.md`.
+TASK-302b is complete as a negative experiment (ADR-030); the optional MiniLM path remains disabled.
+IBM Bob screenshots remain manual submission evidence. TASK-316 and TASK-317 require new untouched
+evidence because all five retrieval sets are now spent.
 
 ## Known issues
 
@@ -80,8 +80,8 @@ continues only with new untouched evaluation data; see `DEVELOPMENT_PLAN.md`.
 Retrieval on the third (unseen) set: **recall@3 0.600**, recall@1 0.400, MRR 0.483, after latent
 semantic retrieval (ADR-018). **All three evaluation sets are now spent.**
 
-Next is the v1.1 submission checkpoint, followed by TASK-302b/TASK-316/TASK-317 only after their
-evaluation allocation is frozen. All four existing retrieval evaluation sets are spent.
+Next retrieval work is TASK-316, but it needs a newly frozen evaluation allocation. TASK-317 must
+also use untouched evidence. All five existing retrieval evaluation sets are spent.
 
 ## Verification log
 
@@ -153,6 +153,8 @@ evaluation allocation is frozen. All four existing retrieval evaluation sets are
 | 2026-09-21 | Self-consistency relabel, 15 dev cases | **15/15 identical — INVALID.** Same labeller, same session; measures memory, not reliability. Recorded so it is not mistaken for validation |
 | 2026-09-21 | Telangana RTI | **Online filing exists** — rti.telangana.gov.in, 114 authorities, UPI payment |
 | 2026-09-20 | `access-hyd/` | Archived to `../archive/access-hyd/` with a README explaining the null result |
+| 2026-10-15 | TASK-302b fifth set | 50 cases: 27 section · 14 none-exists · 8 uncertain · 1 out-of-scope; disjoint from four earlier sets |
+| 2026-10-15 | TASK-302b LSA vs MiniLM | recall@1 0.259→0.222; recall@3 0.481→0.519; MRR 0.358→0.358; silence 0.857→0.857. MiniLM not adopted (ADR-030) |
 
 ## Environment notes
 

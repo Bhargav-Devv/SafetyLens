@@ -188,10 +188,10 @@ The weakest half of the system, and the improvement is measurable.
       evaluation set — **not acted on**, per ADR-017. Needs a fifth set
 - [ ] TASK-317 **OSHA has no combustible dust standard** (H046) — the proposed rule was never
       finalised and it is cited under the General Duty Clause. Same position as TASK-316
-- [~] TASK-302b Sentence-transformer embeddings — **implementation frozen**. The optional pinned
-      MiniLM path and offline tests are complete; a live unlabelled smoke run passed. The shipped
-      LSA path remains the default until the fifth disjoint set is independently labelled and both
-      arms are measured once under labelling guide v1.1
+- [x] TASK-302b Sentence-transformer embeddings — **completed as a negative experiment** (ADR-030).
+      On the fifth disjoint set MiniLM raised recall@3 0.481→0.519 but lowered recall@1
+      0.259→0.222 and primary-only recall@3 0.481→0.444; MRR and correct silence were unchanged.
+      Warm-up rose 53.7s→170.3s and the optional stack adds roughly 589 MB. LSA remains the default
 - [x] TASK-303 Baseline comparison done for both retrieval changes; both arms reported, the
       losing one discarded (ADR-016) and the winning one shipped (ADR-018)
 - [x] TASK-304 Known-gap map built (ADR-011, ADR-015). Heat, workplace violence and overexertion
@@ -210,8 +210,8 @@ titles and procedural standards) rather than leaving "TF-IDF is weak" as the dia
 after**. Without the second set that number ships, and nothing in the output would have shown it was
 noise.
 
-**All four existing sets are now spent.** TASK-302b and later retrieval changes need the fifth set
-defined by `docs/retrieval_labelling_guide_v1_1.md`.
+**All five existing sets are now spent.** The fifth set was used once per frozen TASK-302b arm.
+TASK-316, TASK-317 and later retrieval changes need new untouched evidence.
 Measuring twice on the same data is how the discipline quietly stops working.
 
 **And it cuts both ways.** ADR-016's dev gain was noise and was discarded. ADR-018 looked on dev like

@@ -957,3 +957,26 @@ pressure, showing that prompt compliance alone is insufficient.
 **Limit.** The run validates those scenarios and that configured model. It is not a statistical
 evaluation of all model behavior. The code-enforced renderer, rather than the sample, is the safety
 claim.
+
+---
+
+## ADR-030 — Keep LSA after the frozen sentence-transformer comparison
+
+**Decision, 2026-10-15.** Keep TF-IDF/LSA as the default. Preserve the pinned MiniLM implementation
+as an optional, disabled experimental path.
+
+**Evidence.** Guide v1.1 and both implementations were frozen before a fifth disjoint set was drawn
+or labelled. Each arm was run once. MiniLM changed recall@1 from 0.259 to 0.222, recall@3 from 0.481
+to 0.519, primary-only recall@3 from 0.481 to 0.444, and left MRR (0.358) and correct silence
+(0.857) unchanged.
+
+**Cost.** Full warm-up rose from 53.7 seconds to 170.3 seconds. The optional installation added
+about 501.7 MB for PyTorch and 87.3 MB for the pinned model cache.
+
+**Reason.** One extra top-three hit does not compensate for weaker lead ranking, weaker
+primary-only coverage, a threefold warm-up penalty and a much larger installation. This negative
+experiment answers the question without changing thresholds or tuning on the now-spent set.
+
+**Safety and limit.** Both arms preserve abstention, known gaps, routing and authoritative rendering.
+The labels are AI-assigned reference labels, not professional validation. TASK-316 and TASK-317
+require new untouched evidence.

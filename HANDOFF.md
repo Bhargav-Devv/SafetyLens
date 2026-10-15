@@ -91,8 +91,8 @@ to say the labels are mine.
 |---|---|
 | **TASK-316 / 317** — two new known-gap candidates | A utility task vehicle rollover and a combustible dust explosion, both with no governing 1910 section. Found on evaluation sets that are spent, so fixing them against those sets is the exact mistake ADR-017 exists to prevent. Needs a fifth set |
 | **Multi-label events** | Measured first: only **6.5%** of incidents have a top-two group margin below 1.0, median 2.458, and the worst 1.3% are already abstained on. Real but narrow. `docs/results.md` |
-| **TASK-302b** — sentence embeddings | huggingface.co denied by policy in both workspaces. LSA is the substitute and it works (ADR-018); it is a baseline, not a ceiling |
-| **A fifth evaluation set** | Would be needed before any further retrieval change. Four is already a lot of my judgement in one place — §1 above is worth more than a fifth set |
+| **TASK-302b** — sentence embeddings | Completed as a negative experiment (ADR-030). MiniLM gained one top-three hit but weakened lead and primary-only recall, tripled warm-up, and was not adopted |
+| **Further retrieval changes** | All five sets are spent. TASK-316 and TASK-317 need new untouched evidence |
 
 ---
 

@@ -86,11 +86,11 @@ These experiments cannot change v1.0 behavior until independent evidence support
 
 ### TASK-302b — sentence-transformer retrieval
 
-**Status 2026-10-10:** implementation and protocol frozen; fifth-set labelling and
-one-time comparison remain. The optional path passed an unlabelled live smoke
-test in 124.4 seconds of full application warm-up and 0.855 seconds for the
-first query. It returned only verbatim corpus text. The submission build still
-uses LSA.
+**Completed 2026-10-15 as a negative experiment (ADR-030).** The fifth set was
+labelled under guide v1.1 before either arm ran. MiniLM traded lower lead and
+primary-only recall for one extra top-three hit, left MRR and silence unchanged,
+and more than tripled warm-up time. It remains optional and disabled; LSA remains
+the submission default.
 
 **What can be done:** compare a pinned local sentence-transformer with the shipped TF-IDF/LSA
 retriever, including quality, runtime, memory, package size and offline reproducibility.
