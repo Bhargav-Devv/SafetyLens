@@ -980,3 +980,28 @@ experiment answers the question without changing thresholds or tuning on the now
 **Safety and limit.** Both arms preserve abstention, known gaps, routing and authoritative rendering.
 The labels are AI-assigned reference labels, not professional validation. TASK-316 and TASK-317
 require new untouched evidence.
+
+---
+
+## ADR-031 — Do not add a label-keyed UTV known gap
+
+**Decision, 2026-10-15.** Close TASK-316 without changing the known-gap map.
+
+**Evidence.** H027 is predicted as `Jack-knifed or overturned, nonroadway`. The source corpus has
+488 narratives under that event; 100 explicitly name ATV, UTV or utility vehicles, while 388 cover
+forklifts, dozers, aerial lifts and other vehicles. Many of those other vehicles have applicable
+equipment standards.
+
+OSHA's *Hazards Associated with All-Terrain Vehicles in the Workplace* bulletin says these vehicles
+are used across agriculture, construction, oil production, law enforcement and facilities
+management. The cached Part 1926 sections cover specified construction earthmoving, off-highway and
+material-handling equipment. Industry and equipment context therefore affect applicability.
+
+**Reason.** `NO_SPECIFIC_STANDARD_EVENTS` can key only on an emitted classifier label. Using this
+broad rollover label would turn valid retrievals into false silence. A narrative-keyword exception
+would create a second, untrained classifier hidden inside configuration and still would not establish
+industry applicability.
+
+**Consequence.** H027 remains a documented ambiguity. The system may return no good match rather
+than asserting that no standard exists. No retrieval behavior changed, so no new metric was claimed
+and no fresh evaluation set was consumed.

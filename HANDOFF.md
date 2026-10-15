@@ -89,7 +89,8 @@ to say the labels are mine.
 
 | | Why |
 |---|---|
-| **TASK-316 / 317** — two new known-gap candidates | A utility task vehicle rollover and a combustible dust explosion, both with no governing 1910 section. Found on evaluation sets that are spent, so fixing them against those sets is the exact mistake ADR-017 exists to prevent. Needs a fifth set |
+| **TASK-316** — UTV gap candidate | Resolved without code (ADR-031): the emitted rollover label is much broader than UTVs and cannot safely key a known gap |
+| **TASK-317** — combustible dust candidate | Still open. Any behavior change needs new untouched evidence because all five sets are spent |
 | **Multi-label events** | Measured first: only **6.5%** of incidents have a top-two group margin below 1.0, median 2.458, and the worst 1.3% are already abstained on. Real but narrow. `docs/results.md` |
 | **TASK-302b** — sentence embeddings | Completed as a negative experiment (ADR-030). MiniLM gained one top-three hit but weakened lead and primary-only recall, tripled warm-up, and was not adopted |
 | **Further retrieval changes** | All five sets are spent. TASK-316 and TASK-317 need new untouched evidence |

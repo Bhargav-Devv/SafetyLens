@@ -80,8 +80,9 @@ evidence because all five retrieval sets are now spent.
 Retrieval on the third (unseen) set: **recall@3 0.600**, recall@1 0.400, MRR 0.483, after latent
 semantic retrieval (ADR-018). **All three evaluation sets are now spent.**
 
-Next retrieval work is TASK-316, but it needs a newly frozen evaluation allocation. TASK-317 must
-also use untouched evidence. All five existing retrieval evaluation sets are spent.
+TASK-316 is resolved without a code change (ADR-031): the available event label is far broader than
+UTVs and cannot safely key a gap. Next retrieval work is TASK-317, which needs untouched evidence if
+it produces a candidate behavior change. All five existing retrieval evaluation sets are spent.
 
 ## Verification log
 
@@ -155,6 +156,7 @@ also use untouched evidence. All five existing retrieval evaluation sets are spe
 | 2026-09-20 | `access-hyd/` | Archived to `../archive/access-hyd/` with a README explaining the null result |
 | 2026-10-15 | TASK-302b fifth set | 50 cases: 27 section · 14 none-exists · 8 uncertain · 1 out-of-scope; disjoint from four earlier sets |
 | 2026-10-15 | TASK-302b LSA vs MiniLM | recall@1 0.259→0.222; recall@3 0.481→0.519; MRR 0.358→0.358; silence 0.857→0.857. MiniLM not adopted (ADR-030) |
+| 2026-10-15 | TASK-316 UTV gap audit | 100 of 488 rollover-label cases name ATV/UTV/utility vehicles; label is too broad for a safe known-gap rule. No code change (ADR-031) |
 
 ## Environment notes
 

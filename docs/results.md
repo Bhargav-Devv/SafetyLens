@@ -420,6 +420,19 @@ and safety silence were unchanged. Its optional stack added about 501.7 MB of Py
 model cache. The mixed result does not justify replacing LSA. MiniLM remains optional and disabled.
 The fifth set is now spent and cannot support TASK-316 or TASK-317 changes.
 
+### TASK-316 — why a UTV gap rule was not added
+
+H027 suggested a UTV rollover had no governing Part 1910 section. The full corpus showed that the
+classifier cannot express that narrow condition: `Jack-knifed or overturned, nonroadway` contains
+488 cases, only 100 of which explicitly name ATV, UTV or utility vehicles. The remaining 388 include
+forklifts, dozers, aerial lifts and other equipment with potentially applicable sections.
+
+OSHA's ATV bulletin also describes use across agriculture, construction, oil production, law
+enforcement and facilities management. Part 1926 coverage depends on construction context and
+defined equipment categories. Applying a no-standard rule to the broad event label would suppress
+valid standards. TASK-316 therefore closes as a negative design result with no behavior change and
+no metric claim.
+
 ## Abstention
 
 `LinearSVC` gives decision margins, not probabilities, so confidence is the gap between the top two

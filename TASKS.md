@@ -184,8 +184,10 @@ The weakest half of the system, and the improvement is measurable.
       headline metrics unmoved (major 0.938/0.832; fine 0.668/0.584 across 77 classes), new roadway
       class learnable at F1 0.518. **All three roadway cases now return the General Duty Clause and
       every control is unchanged.** H029, the case that exposed the defect, is fixed
-- [ ] TASK-316 A utility task vehicle rollover has no governing 1910 section (H027). Found on a spent
-      evaluation set — **not acted on**, per ADR-017. Needs a fifth set
+- [x] TASK-316 **Resolved with no code change** (ADR-031). The emitted event label contains 488
+      rollovers: only 100 explicitly name ATV/UTV/utility vehicles and 388 include forklifts,
+      dozers, lifts and other equipment with potentially applicable standards. Industry context also
+      changes Part 1910/1926 applicability. No classifier label can express a safe UTV-only gap rule
 - [ ] TASK-317 **OSHA has no combustible dust standard** (H046) — the proposed rule was never
       finalised and it is cited under the General Duty Clause. Same position as TASK-316
 - [x] TASK-302b Sentence-transformer embeddings — **completed as a negative experiment** (ADR-030).

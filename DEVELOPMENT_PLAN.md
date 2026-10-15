@@ -111,6 +111,11 @@ evaluation sets are spent and cannot support a new improvement claim.
 
 ### TASK-316 — utility task vehicle gap
 
+**Resolved 2026-10-15 with no behavior change (ADR-031).** The classifier's rollover event is not a
+UTV family: 100 of 488 matching-event narratives name ATV/UTV/utility vehicles. The other 388 include
+equipment with specific standards, and industry context changes applicability. A label-keyed gap
+would create more false silence than it fixes.
+
 **What can be done:** determine whether a defined UTV event family has no applicable cached federal
 section, or whether Part 1926 and industry context change the answer.
 
