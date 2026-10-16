@@ -1029,3 +1029,26 @@ industry, material and ignition-source context needed for applicability.
 
 **Consequence.** H046 remains a documented ambiguity. No candidate behavior change was produced,
 so no fresh evaluation set was consumed and no metric was claimed.
+
+---
+
+## ADR-033 — Keep the DGFASLI Model Rules in a separate, provenance-bearing corpus
+
+**Decision, 2026-10-16.** Parse the authoritative DGFASLI PDF into a separate Indian rules cache and
+retrieval index. Do not merge it with the OSHA/eCFR index.
+
+**Evidence.** The source is a 258-page Government of India PDF titled *Model Rules under the
+Factories Act, 1948*, corrected through 15 December 2020. Its contents identify 154 top-level rules,
+including lettered rules. The parser requires all 154 headings in source order and records the source
+URL, file SHA-256, page count, rule count and page span for every extracted rule. Empty or
+unprovenanced caches are refused.
+
+**Reason.** The experiment demonstrates that authoritative retrieval can port to another
+jurisdiction while Indian incident narratives remain unavailable. Mixing jurisdictions would let an
+Indian Model Rule appear as an OSHA result. The Model Rules are also a reference template; they are
+not evidence that a particular state enacted identical text.
+
+**Consequence.** `add-indian-rules` and `search-indian` are explicit separate commands. The main
+classifier, OSHA retrieval index, thresholds and evaluation metrics are unchanged. Extracted PDF
+glyphs are preserved as extracted, including any replacement characters; the system does not guess
+or reconstruct damaged glyphs.

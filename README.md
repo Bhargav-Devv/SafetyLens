@@ -78,6 +78,7 @@ pip install -r requirements.txt          # core
 pip install -r requirements-serve.txt    # optional: HTTP service
 pip install -r requirements-ui.txt       # optional: Streamlit interface
 pip install -r requirements-embeddings.txt # optional: reproduce TASK-302b
+pip install -r requirements-india.txt    # optional: parse the DGFASLI PDF
 ```
 
 Put the OSHA CSV (`January2015toSeptember2023.csv`) in `data/raw/`.
@@ -97,12 +98,19 @@ python tests/test_refusals.py         # 15 tests: every refusal rule
 python main.py evaluate-retrieval     # retrieval accuracy against the labelled set
 python main.py review                 # second-labeller pass over 15 of the 50
 
+python main.py add-indian-rules data/raw/Model_Factories_Rules_as_on_15_12_2020.pdf
+python main.py search-indian "unguarded hoist and lifting chain"
+
 python serve.py                       # HTTP service on :8000, interactive docs at /docs
 python serve.py --spec                # write openapi.json for an agent platform, don't serve
 
 streamlit run app.py                  # the interface, per DESIGN.md Part 2
 python tests/test_ui.py               # 5 tests: every required UI state, headless
 ```
+
+Indian Model Rules retrieval remains separate from OSHA. The generated cache records the official
+DGFASLI source URL, file SHA-256 and page spans. Model Rules are a reference template and are not a
+claim about the law enacted by any particular state.
 
 `train` takes about 4-6 minutes. Everything else loads the saved models - the first call warms up in
 about 25 seconds, then answers immediately.

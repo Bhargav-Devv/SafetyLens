@@ -28,8 +28,8 @@ SafetyLens classifies workplace incident narratives, retrieves cached authoritat
 returns similar OSHA incidents and abstains when evidence is weak or a known regulatory gap applies.
 Its CLI, FastAPI, Streamlit and assistant paths are implemented. The watsonx model can select tools,
 while code renders the final safety answer. Authenticated regulation caches support Parts 1910 and
-1926. The most recently reported full-suite result is **37 passing tests**; it must be rerun before
-v1.1 is declared complete.
+1926. The most recently reported full-suite result is **45 passing tests**. v1.1 still requires the
+manual IBM Bob evidence described below.
 
 ## Release v1.1 — evidence and state reconciliation
 
@@ -172,8 +172,9 @@ This is a product-safety question, not a score-only tuning exercise.
 - **TASK-210:** file the prepared RTI request using the applicant's identity and keep its receipt.
 - **TASK-211:** if narratives arrive, train on OSHA and test on Indian text without hiding domain
   shift.
-- **TASK-212:** after obtaining and inspecting the authoritative DGFASLI PDF, design a
-  provenance-preserving parser and separate Indian regulation corpus.
+- **TASK-212 — complete 2026-10-16 (ADR-033):** the authoritative PDF was inspected and parsed into
+  154 provenance-bearing rules. The separate `search-indian` index demonstrates retrieval portability
+  without mixing jurisdictions or claiming that Model Rules are enacted state law.
 
 No parser will be written blind against a document that has not been obtained and inspected.
 

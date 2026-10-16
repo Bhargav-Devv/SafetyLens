@@ -2,6 +2,7 @@
 data/raw/*
 !data/raw/.gitkeep
 data/standards.json
+data/standards_india_*.json
 
 # Models and outputs
 out/*.joblib

@@ -447,6 +447,18 @@ labels mix dust incidents with cases governed by specific standards. A label-key
 false silence. TASK-317 therefore closes with no behavior change, no evaluation-set use and no
 metric claim.
 
+## DGFASLI Model Rules retrieval — TASK-212
+
+The authoritative 258-page Government of India PDF was parsed into 154 unique top-level rules. The
+generated cache records SHA-256
+`56ed0cfaca7fc35a1815dbb5f09296ca169e8a9d28184c31b28cadfe54e579a9`, the source URL and page
+spans. A hoist/lifting-chain query returned Model Rules 61 and 60 as the first two results; a factory
+fire query returned Fire Protection (Rule 68) in the top three.
+
+This is a portability demonstration, not a measured retrieval-accuracy claim. There is no labelled
+Indian query set, and the Model Rules are not proof of the law enacted by any particular state. The
+corpus and index remain separate from OSHA, so no existing evaluation set or metric changed.
+
 ## Abstention
 
 `LinearSVC` gives decision margins, not probabilities, so confidence is the gap between the top two

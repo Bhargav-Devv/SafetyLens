@@ -55,8 +55,9 @@ embeddings might help.
 ## Current task
 
 TASK-302b is complete as a negative experiment (ADR-030); the optional MiniLM path remains disabled.
-TASK-316 and TASK-317 are resolved without behavior changes (ADR-031/032). IBM Bob screenshots
-remain manual submission evidence.
+TASK-316 and TASK-317 are resolved without behavior changes (ADR-031/032). TASK-212's separate
+DGFASLI Model Rules corpus is complete (ADR-033). IBM Bob screenshots remain manual submission
+evidence; TASK-210 awaits the applicant's filing receipt.
 
 ## Known issues
 
@@ -158,6 +159,7 @@ remain spent; neither audit consumed another set because neither produced a beha
 | 2026-10-15 | TASK-302b LSA vs MiniLM | recall@1 0.259→0.222; recall@3 0.481→0.519; MRR 0.358→0.358; silence 0.857→0.857. MiniLM not adopted (ADR-030) |
 | 2026-10-15 | TASK-316 UTV gap audit | 100 of 488 rollover-label cases name ATV/UTV/utility vehicles; label is too broad for a safe known-gap rule. No code change (ADR-031) |
 | 2026-10-15 | TASK-317 combustible-dust audit | Only 5 `Dust explosion` cases; specific OSHA provisions can apply, so no broad General Duty Clause rule was added (ADR-032) |
+| 2026-10-16 | TASK-212 DGFASLI corpus | 258 authoritative PDF pages → 154 provenance-bearing Model Rules in a separate Indian index (ADR-033) |
 
 ## Environment notes
 

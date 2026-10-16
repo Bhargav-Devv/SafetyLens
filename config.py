@@ -60,6 +60,7 @@ SVM_C = 1.0
 ECFR_URL = "https://www.ecfr.gov/api/versioner/v1/full/{date}/title-29.xml?part=1910"
 ECFR_DATES = ("2026-01-01", "2025-01-01", "2024-01-01")
 STANDARDS_CACHE = DATA_DIR / "standards.json"
+INDIA_RULES_CACHE = DATA_DIR / "standards_india_model_factories_rules.json"
 
 # Additional regulation corpora, merged into the retrieval index when present.
 #

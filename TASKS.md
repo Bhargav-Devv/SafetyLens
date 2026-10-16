@@ -138,11 +138,11 @@ The blocker is a publication decision, not language, not technology, and not eff
       Section 8(1)(j) cannot be used against it. Fill in the brackets, enclose ₹10, send
 - [ ] TASK-211 If any are obtained: train on OSHA, test on Indian text, **report the drop honestly**.
       A large drop is a finding about domain shift, not a failure
-- [ ] TASK-212 Build the DGFASLI retrieval corpus. **Worth doing regardless of TASK-210** — it shows
-      the retrieval half ports while the classifier half waits for data. `dgfasli.gov.in` is denied by
-      network policy here; the PDF needs a browser download (`HANDOFF.md` §3). The XML path is already
-      generalised and tested; the PDF extraction step is deliberately unwritten rather than written
-      blind against a file I have never seen
+- [x] TASK-212 **DGFASLI retrieval corpus complete** (ADR-033). The authoritative 258-page Model
+      Factories Rules PDF was downloaded and visually inspected, then parsed into 154 unique
+      top-level rules with source URL, SHA-256 and page spans. `python main.py search-indian` searches
+      a separate index; Indian text is never merged into the OSHA corpus. Model Rules are a reference
+      template and must not be presented as enacted law for a particular state
 
 ## Phase 3 — Improve retrieval
 

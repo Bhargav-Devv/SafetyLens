@@ -1,0 +1,3 @@
+# Optional TASK-212 PDF extraction dependency. The generated Indian corpus is
+# separate from the OSHA runtime and is not required for the main application.
+pypdf>=6.0,<7

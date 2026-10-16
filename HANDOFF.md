@@ -3,8 +3,8 @@
 This file preserves the manual handoff history. TASK-113, TASK-307 and TASK-309 below were completed
 after the original handoff was written. Current implementation order is in `DEVELOPMENT_PLAN.md`.
 
-Current verified state, 2026-10-08: full suite **37/37 passing**; direct watsonx live scenarios
-completed; second review completed; authoritative Part 1926 corpus imported.
+Current verified state, 2026-10-16: full suite **45/45 passing**; direct watsonx live scenarios
+completed; second review completed; authoritative Part 1926 and separate DGFASLI corpora imported.
 
 ---
 
@@ -27,15 +27,19 @@ The direct watsonx path superseded the Orchestrate deployment. Ten live scenario
 
 ---
 
-## 3. Remaining browser download
+## 3. DGFASLI Model Factories Rules — completed · TASK-212
 
-I re-tested every route before writing this: `ecfr.gov`, `govinfo.gov`, `asrs.arc.nasa.gov`,
-`dgfasli.gov.in` and `huggingface.co` are **all denied by network policy in both the cloud workspace
-and the one on your laptop**, and no Chrome is connected for browser automation. I deliberately did
-not use the web-fetch tool to reconstruct the corpus: that routes authoritative regulation text
-through a summarising model, which is the one thing ADR-001 forbids outright.
+The authoritative 258-page PDF was downloaded directly from DGFASLI on 2026-10-16, visually
+inspected and parsed into 154
+top-level rules. The cache records source URL, SHA-256 and page spans. It remains separate from OSHA:
 
-The remaining DGFASLI source is blocked here by network policy, not by missing parser code.
+```bash
+python -m pip install -r requirements-india.txt
+python main.py add-indian-rules data/raw/Model_Factories_Rules_as_on_15_12_2020.pdf
+python main.py search-indian "unguarded hoist and lifting chain"
+```
+
+The document contains Model Rules, not proof of what any state has enacted. See ADR-033.
 
 ### 29 CFR 1926 — construction — completed  ·  TASK-309
 
@@ -52,18 +56,6 @@ python main.py add-part 1926 path/to/the-file.xml
 
 It was parsed, validated and merged into the index. The older evaluation labels remain historical;
 their `out_of_scope` verdicts describe the corpus that existed when those sets were frozen.
-
-### DGFASLI Model Factories Rules  ·  TASK-212
-
-```
-https://dgfasli.gov.in/public/Admin/Cms/AllPdf/Model_Factories_Rules_as_on_15_12_2020.pdf
-```
-
-Drop it in `data/raw/` and tell me — this one is a PDF, so it needs an extraction step I have not
-written blind. Worth doing even though the Indian *narratives* are unobtainable: it demonstrates the
-retrieval half ports to another jurisdiction while the classifier half waits for data.
-
----
 
 ## 4. File the RTI request  ·  TASK-210
 

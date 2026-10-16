@@ -9,6 +9,8 @@ SafetyLens - command line entry point.
     python main.py bob --llm          the same flow with a watsonx.ai model behind it
     python main.py transcript         replay the scripted conversation to docs/
     python main.py add-part 1926 F    parse a downloaded eCFR Part XML and cache it
+    python main.py add-indian-rules F parse the authoritative DGFASLI PDF separately
+    python main.py search-indian Q    search the separate Indian rules corpus
     python main.py evaluate-retrieval measure retrieval against the labelled set
     python main.py prepare-retrieval-experiment  draw the fifth disjoint set
     python main.py review             second-labeller pass - 15 of the 50
@@ -373,6 +375,24 @@ if __name__ == "__main__":
             sys.exit(1)
         regulations.add_part(sys.argv[2], Path(sys.argv[3]))
         print("\nRun `python main.py demo` to see it in the index.")
+    elif action == "add-indian-rules":
+        if len(sys.argv) < 3:
+            print("usage: python main.py add-indian-rules <path-to-dgfasli-pdf>")
+            sys.exit(1)
+        from src import indian_regulations
+        indian_regulations.add_model_rules(Path(sys.argv[2]))
+        print("\nThis corpus remains separate from the OSHA retrieval index.")
+    elif action == "search-indian":
+        if len(sys.argv) < 3:
+            print('usage: python main.py search-indian "hazard description"')
+            sys.exit(1)
+        from src.india_retrieval import IndianRulesIndex
+        for result in IndianRulesIndex.load().search(" ".join(sys.argv[2:])):
+            print(f"\n{result['rank']}. Model Rule {result['rule']} — {result['title']}")
+            print(f"   pages {result['page_start']}-{result['page_end']} · "
+                  f"score {result['score']:.3f}")
+            print(f"   {result['text'][:500]}{'...' if len(result['text']) > 500 else ''}")
+        print("\nSource: DGFASLI Model Rules PDF; extracted text, not generated.")
     elif action == "analyse":
         if len(sys.argv) < 3:
             print('usage: python main.py analyse "incident narrative"'); sys.exit(1)
