@@ -70,10 +70,10 @@ specialist training, without ever fabricating a regulatory requirement.
 - [x] Three tools with JSON schemas, importable by an agent platform
 - [x] System prompt carrying all six refusal rules
 - [x] Deterministic decision flow — `python main.py bob`
-- [x] 15 tests asserting every refusal rule
+- [x] 22 tests asserting refusal and corpus-integrity rules
 - [x] Generated transcript covering every branch
 - [x] Known-gap map: hazards with no governing standard answer with the General Duty Clause
-- [ ] Hosted agent on IBM watsonx — blocked on an account, not on code
+- [x] Hosted assistant path on IBM watsonx.ai — ten live scenarios completed (ADR-029)
 
 ## Out of scope (v1)
 
@@ -82,7 +82,8 @@ specialist training, without ever fabricating a regulatory requirement.
 - Compliance or liability determination
 - Any web or mobile interface
 - Real-time monitoring or sensor input
-- Indian regulatory corpus (planned — TASKS.md Phase 2)
+- Treating the DGFASLI Model Rules as enacted state law. The separate optional corpus is a
+  provenance-bearing reference index only (ADR-033).
 
 ## Success criteria
 

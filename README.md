@@ -93,7 +93,7 @@ python main.py analyse "Worker fell 18 feet from an unguarded roof edge."
 
 python main.py bob                    # talk to it - the agent decision flow
 python main.py transcript             # regenerate docs/assistant_transcript.md
-python tests/test_refusals.py         # 15 tests: every refusal rule
+python tests/test_refusals.py         # 22 tests: refusal and corpus-integrity rules
 
 python main.py evaluate-retrieval     # retrieval accuracy against the labelled set
 python main.py review                 # second-labeller pass over 15 of the 50

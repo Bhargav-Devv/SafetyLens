@@ -38,7 +38,7 @@ from src.service import get_service
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     """Build the engine once, before the first request. Roughly 40 seconds:
-    two classifiers, 170 cached sections, a TF-IDF index over ~86,000
+    two classifiers, 369 cached sections, a TF-IDF index over ~86,000
     narratives and the SVD fitted over both. Every request after is fast."""
     get_service()
     yield
@@ -104,7 +104,7 @@ def analyse_incident(body: IncidentRequest) -> dict:
 
 
 @app.post("/explain_standard", operation_id="explain_standard", tags=["tools"],
-          summary="Full verbatim text of one section of 29 CFR 1910")
+          summary="Full verbatim text of one cached Title 29 OSHA section")
 def explain_standard(body: SectionRequest) -> dict:
     """Quote what comes back. Never paraphrase a regulation, and never supply
     section text from memory. `status` is `found`, `not_found` or

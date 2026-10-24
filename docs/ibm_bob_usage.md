@@ -47,9 +47,9 @@ Screenshots or a short recording of:
    `src/retrieval.py::search_for_hazard` — it carries the two-tier routing logic and the comment
    explaining why the obvious fix was rejected. Ask Bob what it does and whether the tiering is
    sound.
-3. **Bob's security scan on `serve.py`.** It should flag the missing authentication, which is a
-   *known and documented* limitation — so the scan agreeing with `serve.py`'s own docstring is a
-   good, honest screenshot.
+3. **Bob's security scan on `serve.py`.** Capture the actual result: Semgrep reports zero automated
+   findings. Keep `serve.py`'s visible warning or the written caption with it so the separately
+   identified missing-authentication limitation is not misrepresented as a Semgrep finding.
 4. **BobShell running `python tests/test_refusals.py`** — 22 passing.
 
 ## The honest framing for the deck

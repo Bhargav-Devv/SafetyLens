@@ -89,7 +89,8 @@ to say the labels are mine.
 
 ---
 
-## If you only do one thing
+## Remaining manual evidence
 
-Run `python main.py review`. Everything else on this page can wait; that one changes what the project
-is allowed to claim.
+The local implementation and second-labeller review are complete. The remaining submission actions
+are TASK-210 (file the RTI request and retain its receipt) and the four IBM Bob screenshots listed in
+`docs/ibm_bob_usage.md`. TASK-211 remains conditional on receiving narratives through TASK-210.

@@ -3,7 +3,7 @@
 **Current project state.** Update this whenever state changes.
 For permanent decisions see DECISIONS.md — decisions are permanent, state is not.
 
-**Last updated:** 2026-10-15 (TASK-302b completed)
+**Last updated:** 2026-10-24 (local end-to-end verification)
 
 ---
 
@@ -12,7 +12,7 @@ For permanent decisions see DECISIONS.md — decisions are permanent, state is n
 **v1 is complete. Phase 1 and the direct watsonx assistant path are complete.** Both classifiers
 are trained, authenticated eCFR Parts 1910 and 1926 are cached, abstention is enforced, and the
 model selects tools while deterministic code renders the final safety answer (ADR-029). The full
-suite passed **40/40** before the TASK-302b measurement.
+suite passes **45/45** after TASK-212.
 
 ## Completed
 
@@ -22,7 +22,7 @@ suite passed **40/40** before the TASK-302b measurement.
 - Fine-grained classifier — accuracy 0.668, macro F1 0.585
 - Dummy baselines reported beside every metric
 - Per-class analysis, best and worst
-- 29 CFR 1910 fetched and cached — 170 sections
+- 29 CFR Parts 1910 and 1926 fetched and cached — 369 sections
 - Retrieval with title weighting, hazard boost and a floor
 - Similar-incident search
 - Abstention on classifier margin and retrieval score
@@ -37,7 +37,7 @@ suite passed **40/40** before the TASK-302b measurement.
 - `src/assistant_tools.py` — three tools with JSON schemas and a dispatcher
 - `docs/assistant_system_prompt.md` — the prompt, six rules
 - `src/agent.py` — the decision flow, deterministic; `python main.py bob`
-- `tests/test_refusals.py` — 15 tests, every refusal rule asserted
+- `tests/test_refusals.py` — 22 tests covering refusal and corpus-integrity rules
 - `docs/assistant_transcript.md` — generated, not hand-written
 - Known-gap map and routing requirement (ADR-011, ADR-012)
 
